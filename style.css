@@ -87,13 +87,15 @@
     grid-column: span 1;
     display: grid;
     grid-template-rows: 3fr 1fr;
-    aspect-ratio: 2 / 3;
+    aspect-ratio: 2 / 4;
   }
 
   .book-cover {
     border: 2px solid red;
     grid-row: span 1;
     grid-column: span 1;
+    background-image: url(https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421577449/vagabond-vol-37-9781421577449_hr.jpg);
+    background-size: cover;
   }
 
   .book-details {
