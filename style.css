@@ -50,8 +50,6 @@
     isolation: isolate;
   }
 
-
-
   .container {
     display: grid;
     grid-template-rows: 40px min-content;

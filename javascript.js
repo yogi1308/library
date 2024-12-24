@@ -17,6 +17,7 @@ TheReturnOfTheKing = new Book('The Return of the King', 'J.R.R. Tolkien', true, 
 
 
 // displayBooks(Vagabond)
+//can add genre and summary
 
 const myLibrary = [Vagabond, TheSlamDunk, Berserk, OnePiece, SteelBallRun, ChainsawMan, VinLandSaga, TheAlchemist, TheHobbit, TheGreatGatsby, TheHungerGames, TheLordOfTheRings, TheSilmarillion, TheTwoTowers, TheFellowshipOfTheRing, TheReturnOfTheKing];
 
@@ -102,4 +103,18 @@ function displayBooks(currBook) {
 }
 
 myLibrary.forEach(book => {displayBooks(book)})
+
+
+
+
+
+
+const plusButton = document.querySelector(".plusButton")
+plusButton.addEventListener("click", () => {
+  const dialog = document.querySelector(".dialog")
+  dialog.showModal()
+})
+
+
+
 
