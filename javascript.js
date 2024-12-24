@@ -24,9 +24,9 @@ function Book(title, author, unread, read, started, pages, chapters, cover) {
   // the constructor...
   this.title = title
   this.author = author
-  this.unread = unread
-  this.read = read
-  this.started = started
+  this.unread = unread // if book has not been read it should be in red
+  this.read = read // if book has been read it should be in green
+  this.started = started // if book has been started it should be in blue
   this.pages = pages
   this.chapters = chapters
   this.cover = cover
