@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Roboto;
+    src: url(images-and-fonts/Roboto/Roboto-Regular.ttf);
+  }
+  /* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+  }
+  
+  body {
+    /* 3. Add accessible line-height */
+    line-height: 1.5;
+    /* 4. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  /* 5. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 6. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 7. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 8. Improve line wrapping */
+  p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+  
+  /*
+    9. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+
+  .container {
+    display: grid;
+    grid-template-rows: 40px minmax(100vh, fit-content);
+    font-family: Roboto, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  .header {
+    grid-row: span 1;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header > div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 80px;
+  }
+
+  .main {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 8fr));
+    grid-template-rows: 150px;
+    grid-auto-columns: minmax(100px, 8fr);
+    grid-auto-rows: 150px;
+    gap: 10px;
+  }
+
+  .book {
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    gap: 10px;
+    min-height: 320px;
+    min-width: 220px;
+  }
+
+  .book-cover { 
+    min-height: 100px;
+    min-width: 50px;
+  }
+
+
+
