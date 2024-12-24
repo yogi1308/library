@@ -115,6 +115,12 @@ plusButton.addEventListener("click", () => {
   dialog.showModal()
 })
 
+const closeButton = document.querySelector(".closeButton")
+closeButton.addEventListener("click", () => {
+  const dialog = document.querySelector(".dialog")
+  dialog.close()
+})
+
 
 
 
