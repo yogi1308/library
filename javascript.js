@@ -102,6 +102,8 @@ function displayBooks(currBook) {
         status.style.color = "green"
     }
 
+    status.addEventListener("click", statusChange)
+
 
     title_author.appendChild(status)
 
@@ -118,6 +120,7 @@ function displayBooks(currBook) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z");
     buttons.appendChild(path);
+    buttons.addEventListener("click", editButtonClick)
     details.appendChild(buttons);
     
     main.appendChild(book)
@@ -174,6 +177,10 @@ confirmBtn.addEventListener("click", (event) => {
   coverDialogValue.style.marginBottom = "0";
 });
 
+function editButtonClick(event) {
+
+}
+
 function deleteButtonClick(event) {
   const parentElement = event.target.closest(".book"); 
   const bookToDelete = parentElement.querySelector(".book-details > div > p:nth-child(1)").textContent;
@@ -182,6 +189,32 @@ function deleteButtonClick(event) {
   console.log(myLibrary);
 }
 
+
+function statusChange(event) {
+  statusSelector = event.target.closest(".book-details")
+  const statusToChange = statusSelector.querySelector("div>p:nth-child(1)").textContent;
+  const book = myLibrary.find(book => book.title === statusToChange);
+  statusSelector = statusSelector.querySelector("div")
+  
+  if (event.target.textContent === "Unread") {
+    event.target.textContent = "Started";
+    event.target.style.color = "blue";
+  }
+  else if (event.target.textContent === "Started") {
+    event.target.textContent = "Completed";
+    event.target.style.color = "green";
+  }
+  else {
+    event.target.textContent = "Unread";
+    event.target.style.color = "red";
+  }
+
+  book.status = event.target.textContent;
+  console.log(myLibrary);
+  statusSelector.appendChild(event.target);
+
+
+}
 
 
 myLibrary.forEach(book => {displayBooks(book)})

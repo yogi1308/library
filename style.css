@@ -98,12 +98,17 @@
     gap: 10px;
   }
 
-  /* dialog > div {
-    border: 1px solid black;
-    width: 100%;
-    aspect-ratio: 2 / 2.75;
-    margin-bottom: 5px;
-  } */
+  .book-details > div > p:nth-child(4) {
+    transition: color 0.3s ease;
+    cursor: pointer;
+    width: min-content;
+  }
+
+  .book-details > div > p:nth-child(4):hover {
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
 
   #length {
     max-width: 100px;
@@ -305,6 +310,8 @@
   visibility: visible;
   opacity: 1;
 }
+
+
 
 
 
