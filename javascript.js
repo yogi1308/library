@@ -19,7 +19,7 @@ TheReturnOfTheKing = new Book('The Return of the King', 'J.R.R. Tolkien', 'Unrea
 // displayBooks(Vagabond)
 //can add genre and summary
 
-const myLibrary = [Vagabond, TheSlamDunk, Berserk, OnePiece, SteelBallRun, ChainsawMan, VinLandSaga, TheAlchemist, TheHobbit, TheGreatGatsby, TheHungerGames, TheLordOfTheRings, TheSilmarillion, TheTwoTowers, TheFellowshipOfTheRing, TheReturnOfTheKing];
+myLibrary = [Vagabond, TheSlamDunk, Berserk, OnePiece, SteelBallRun, ChainsawMan, VinLandSaga, TheAlchemist, TheHobbit, TheGreatGatsby, TheHungerGames, TheLordOfTheRings, TheSilmarillion, TheTwoTowers, TheFellowshipOfTheRing, TheReturnOfTheKing];
 
 function Book(title, author, status, length, lengthType, cover) {
   // the constructor...
@@ -31,7 +31,6 @@ function Book(title, author, status, length, lengthType, cover) {
   this.cover = cover
 }
 
-console.log(Vagabond)
 
 function addBookToLibrary() {
   // do stuff here
@@ -68,6 +67,7 @@ function displayBooks(currBook) {
     svg.appendChild(iconPath);
     deleteButton.appendChild(svg);
     cover.appendChild(deleteButton);
+    deleteButton.addEventListener("click", deleteButtonClick)
     book.appendChild(cover)
 
     const details = document.createElement("div")
@@ -162,7 +162,6 @@ confirmBtn.addEventListener("click", (event) => {
   const readStatusDialog = document.querySelector("select").value;
   let newBookName = titleDialog;
   newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value);
-  console.log(newBookName);
   myLibrary.push(newBookName);
   myLibrary.forEach(book => {displayBooks(book)})
   dialog.close(); // Have to send the select box value here.
@@ -174,6 +173,15 @@ confirmBtn.addEventListener("click", (event) => {
   coverDialogValue.style.aspectRatio = "0";
   coverDialogValue.style.marginBottom = "0";
 });
+
+function deleteButtonClick(event) {
+  const parentElement = event.target.closest(".book"); 
+  const bookToDelete = parentElement.querySelector(".book-details > div > p:nth-child(1)").textContent;
+  parentElement.remove();
+  myLibrary = myLibrary.filter(book => book.title !== bookToDelete);
+  console.log(myLibrary);
+}
+
 
 
 myLibrary.forEach(book => {displayBooks(book)})
