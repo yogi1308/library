@@ -128,6 +128,9 @@ coverDialog.addEventListener("input", () => {
   coverDialogValue.style.backgroundImage = `url(${coverDialog.value})`;
   coverDialogValue.style.backgroundSize = "cover";
   coverDialogValue.style.backgroundPosition = "center";
+  coverDialogValue.style.width = "100%";
+  coverDialogValue.style.aspectRatio = "2 / 2.75";
+  coverDialogValue.style.marginBottom = "5px";
 });
 
 confirmBtn.addEventListener("click", (event) => {
@@ -148,6 +151,9 @@ confirmBtn.addEventListener("click", (event) => {
   document.querySelector("form").reset(); // Reset the form
   coverDialogValue.style.border = "none";
   coverDialogValue.style.backgroundImage = "none";
+  coverDialogValue.style.width = "0%";
+  coverDialogValue.style.aspectRatio = "0";
+  coverDialogValue.style.marginBottom = "0";
 });
 
 

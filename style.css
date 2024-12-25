@@ -98,12 +98,12 @@
     gap: 10px;
   }
 
-  dialog > div {
+  /* dialog > div {
     border: 1px solid black;
     width: 100%;
     aspect-ratio: 2 / 2.75;
     margin-bottom: 5px;
-  }
+  } */
 
   #length {
     max-width: 100px;
