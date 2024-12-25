@@ -109,17 +109,20 @@ myLibrary.forEach(book => {displayBooks(book)})
 
 
 
-const plusButton = document.querySelector(".plusButton")
-plusButton.addEventListener("click", () => {
-  const dialog = document.querySelector(".dialog")
-  dialog.showModal()
-})
+const plusButton = document.querySelector(".plusButton");
+const closeButton = document.querySelector(".closeButton");
+const dialog = document.querySelector(".dialog");
+const main = document.querySelector(".main");
 
-const closeButton = document.querySelector(".closeButton")
+plusButton.addEventListener("click", () => {
+  dialog.showModal();
+  main.classList.add("dialog-open"); // Add class to resize container
+});
+
 closeButton.addEventListener("click", () => {
-  const dialog = document.querySelector(".dialog")
-  dialog.close()
-})
+  dialog.close();
+  main.classList.remove("dialog-open"); // Remove class to resize container back
+});
 
 
 

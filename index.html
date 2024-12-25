@@ -9,29 +9,30 @@
 </head>
 <body>
     <dialog class="dialog">
+        <div></div>
         <form>
-            <div>
+            <div class="cover-title-author">
+                <label for="cover">Cover</label>
+                <input type="url" id="cover">
                 <label for="title">Title</label>
                 <input type="text" id="title" required>
-            </div>
-            <div>
                 <label for="author">Author</label>
                 <input type="text" id="author">
             </div>
             <div>
-                <input type="number" id="chapters">
                 <input type="radio" id="pages" name="length" value="pages">
                 <label for="pages">Pages</label>
                 <input type="radio" id="chapters" name="length" value="chapters">
                 <label for="chapters">Chapters</label>
+                <input type="number" id="chapters">
             </div>
             <div>
-                <input type="radio" id="completed" name="status" value="completed">
-                <label for="completed">Completed</label>
-                <input type="radio" id="started" name="status" value="started">
-                <label for="started">Started</label>
-                <input type="radio" id="unread" name="status" value="unread">
-                <label for="unread">Unread</label>
+                <label for="status">Read Status:</label>
+                <select name="status">
+                    <option value="mercedes">Unread</option>
+                    <option value="tesla">Completed</option>
+                    <option value="volvo">Started</option>
+                  </select>
             </div>
             <button class="closeButton">
                 <span class="X"></span>
