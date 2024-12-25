@@ -121,22 +121,33 @@ closeButton.addEventListener("click", () => {
   main.classList.remove("dialog-open"); // Remove class to resize container back
 });
 
+const coverDialog = document.querySelector("input#cover");
+coverDialog.addEventListener("input", () => {
+  const coverDialogValue = document.querySelector(".dialog>div");
+  coverDialogValue.style.border = "2px solid black";
+  coverDialogValue.style.backgroundImage = `url(${coverDialog.value})`;
+  coverDialogValue.style.backgroundSize = "cover";
+  coverDialogValue.style.backgroundPosition = "center";
+});
+
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); // We don't want to submit this fake form
-  const coverDialog = document.querySelector("input#cover");
-  const titleDialog = document.querySelector("input#title");
-  const authorDialog = document.querySelector("input#author");
-  const lengthDialog = document.querySelector("#length");
-  const lengthTypeDialog = document.querySelector('input[name="length"]:checked');
-  const readStatusDialog = document.querySelector("select");
+  const coverDialogValue = document.querySelector(".dialog>div");
+  const titleDialog = document.querySelector("input#title").value;
+  const authorDialog = document.querySelector("input#author").value;
+  const lengthDialog = document.querySelector("#length").value;
+  const lengthTypeDialog = document.querySelector('input[name="length"]:checked').value;
+  const readStatusDialog = document.querySelector("select").value;
   let newBookName = titleDialog;
-  newBookName= new Book(titleDialog.value, authorDialog.value, readStatusDialog.value, lengthDialog.value, lengthTypeDialog.value, coverDialog.value);
+  newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value);
   console.log(newBookName);
   myLibrary.push(newBookName);
   myLibrary.forEach(book => {displayBooks(book)})
   dialog.close(); // Have to send the select box value here.
   main.classList.remove("dialog-open"); // Remove class to resize container back
   document.querySelector("form").reset(); // Reset the form
+  coverDialogValue.style.border = "none";
+  coverDialogValue.style.backgroundImage = "none";
 });
 
 
