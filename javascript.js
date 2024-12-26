@@ -256,6 +256,32 @@ function displayBooks(currBook) {
     deleteButton.appendChild(svg);
     cover.appendChild(deleteButton);
     deleteButton.addEventListener("click", deleteButtonClick)
+
+
+    const likeLabel = document.createElement("label");
+    likeLabel.classList.add("ui-like");
+    
+    const likeInput = document.createElement("input");
+    likeInput.type = "checkbox";
+    
+    const likeDiv = document.createElement("div");
+    likeDiv.classList.add("like");
+    
+    const likeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    likeSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    likeSvg.setAttribute("viewBox", "0 0 24 24");
+    likeSvg.setAttribute("fill", "");
+    
+    const likePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    likePath.setAttribute("d", "M20.808,11.079C19.829,16.132,12,20.5,12,20.5s-7.829-4.368-8.808-9.421C2.227,6.1,5.066,3.5,8,3.5a4.444,4.444,0,0,1,4,2,4.444,4.444,0,0,1,4-2C18.934,3.5,21.773,6.1,20.808,11.079Z");
+    
+    likeSvg.appendChild(likePath);
+    likeDiv.appendChild(likeSvg);
+    likeLabel.appendChild(likeInput);
+    likeLabel.appendChild(likeDiv);
+    cover.appendChild(likeLabel);
+    
+
     book.appendChild(cover)
 
     const details = document.createElement("div")
@@ -273,6 +299,8 @@ function displayBooks(currBook) {
     author.textContent = currBook.author
     author.addEventListener("click", editAuthor)
     title_author.appendChild(author)
+
+      
 
     const length = document.createElement("div")
     const lengthValue = document.createElement("span")
@@ -382,6 +410,7 @@ function bookCoverHover(event) {
   const cover = event.target.closest(".book-cover");
   const book = myLibrary.find(book => book.title === cover.closest(".book").querySelector(".book-details > div > p:nth-child(1)").textContent);
   const overlay = document.createElement("div");
+  overlay.classList.add("synopsis")
   overlay.textContent = book.synopsis;
   if(book.synopsis === undefined) {
     overlay.textContent = "Add synopsis";
@@ -422,7 +451,7 @@ function bookCoverHover(event) {
 
 function bookCoverMouseOut(event) {
   const cover = event.target.closest(".book-cover");
-  const overlay = cover.querySelector("div");
+  const overlay = cover.querySelector(".synopsis");
   if (overlay) {
     overlay.remove();
   }
