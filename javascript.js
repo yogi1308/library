@@ -1,8 +1,7 @@
 
 // clicking on the dots will enable you to add a genre and a summary, a review, and a rating, and favorite
-// clicking on any of the book details will enable you to edit theat detail
 // add a dark mode
-// make the search bar amd sort button work
+// make the sort button work in ascending and descending order
 //clicking on the book cover will open a dialog with all the information about the book
 // add feature to make it into compact grid view, list view, and detailed view
 
@@ -54,6 +53,9 @@ function Book(title, author, status, length, lengthType, cover, synopsis) {
   this.synopsis = synopsis
 }
 
+const verticalDots = document.querySelector(".vertical-dots")
+verticalDots.addEventListener("click", displayType)
+
 const sort = document.querySelector(".sort")
 sort.addEventListener("click", sortBooks)
 
@@ -65,7 +67,8 @@ searchBar.addEventListener("input", searchBooks)
 
 function searchBooks(event) {
   const searchContainer = document.querySelector(".search-container")
-  if (search.style.display == "none" || search.style.display == "") {
+  if (searchContainer.style.display == "flex") {searchContainer.style.display = "none"}
+  else if (search.style.display == "none" || search.style.display == "") {
     searchContainer.style.display = "flex";
   }
   const searchInput = document.querySelector("#search-input")
@@ -107,6 +110,9 @@ function sortBooks(event) {
       main.innerHTML = "";
       myLibrary.forEach(book => {displayBooks(book)})
     }
+    else if (event.target.textContent === "By Date Added") {
+      myLibrary.forEach(book => {displayBooks(book)})
+    }
     else if (event.target.textContent === "By Reading Status") {
       const statusList = document.querySelector(".header > div:nth-child(3) > ol > div > ol")
       statusList.style.display = "block"
@@ -140,6 +146,18 @@ function sortByStatus(event) {
       sortCompletedBooks.forEach(book => {displayBooks(book)})
     }
   })
+}
+
+function displayType(event) {
+  const displayList = document.querySelector(".display-list")
+  displayList.style.display = "block"
+
+
+
+
+
+  displayList.addEventListener("mouseenter", (event) => {displayList.style.display = "block"})
+  displayList.addEventListener("mouseleave", (event) => {displayList.style.display = "none"})
 }
 
 
