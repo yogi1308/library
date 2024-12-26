@@ -170,6 +170,7 @@
     background-image: url(https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421577449/vagabond-vol-37-9781421577449_hr.jpg);
     background-size: cover;
     border-radius: 5px;
+    
   }
 
   .book-details {
@@ -183,8 +184,6 @@
   .book-details > div {
     grid-column: span 1;
   }
-
-
 
   /* From Uiverse.io by javierBarroso */ 
 .closeButton {
@@ -266,6 +265,7 @@
   left: 85%;
   border: none;
   opacity: 0.5;
+  z-index: 3;
 }
 
 .deleteButton:hover {
@@ -379,6 +379,7 @@
     height: var(--plus_sideLength);
     background-color: #000000;
     overflow: hidden;
+    z-index: 3;
   }
   
   .plusButton::before {
