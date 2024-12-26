@@ -1,4 +1,4 @@
-//features to add: when hovered on the book, it will show synopsis
+
 // clicking on the dots will enable you to add a genre and a summary, a review, and a rating, and favorite
 // clicking on any of the book details will enable you to edit theat detail
 // add a dark mode
@@ -103,6 +103,7 @@ function displayBooks(currBook) {
     const title_author = document.createElement("div")
 
     const title = document.createElement("p")
+    title.addEventListener("click", editTitle)
     title.textContent = currBook.title
     title_author.appendChild(title)
 
@@ -262,6 +263,44 @@ function deleteButtonClick(event) {
   parentElement.remove();
   myLibrary = myLibrary.filter(book => book.title !== bookToDelete);
   console.log(myLibrary);
+}
+
+function editTitle(event) {
+  const titleSelector = event.target.closest(".book-details");
+  const titleElement = titleSelector.querySelector("div>p:nth-child(1)");
+  const currentTitle = titleElement.textContent;
+  const book = myLibrary.find(book => book.title === currentTitle);
+
+  // Create a textarea element for editing the title
+  const textarea = document.createElement("textarea");
+  textarea.value = currentTitle;
+  textarea.style.width = "100%";
+  textarea.style.height = "auto";
+
+  // Replace the title element with the textarea
+  titleElement.replaceWith(textarea);
+
+  // Focus the textarea and select the text
+  textarea.focus();
+  textarea.select();
+
+  // Handle the blur event to save the new title
+  textarea.addEventListener("blur", () => {
+    const newTitle = textarea.value.trim();
+    if (newTitle) {
+      book.title = newTitle;
+      const newTitleElement = document.createElement("p");
+      newTitleElement.textContent = newTitle;
+      newTitleElement.style.wordBreak = "break-word";
+      textarea.replaceWith(newTitleElement)
+      newTitleElement.addEventListener("click", editTitle);
+      console.log(myLibrary);
+    } else {
+      // If the new title is empty, revert to the original title
+      textarea.replaceWith(titleElement)
+      titleElement.addEventListener("click", editTitle);
+    }
+  });
 }
 
 
