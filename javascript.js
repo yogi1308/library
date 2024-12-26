@@ -212,6 +212,10 @@ function bookCoverHover(event) {
   const book = myLibrary.find(book => book.title === cover.closest(".book").querySelector(".book-details > div > p:nth-child(1)").textContent);
   const overlay = document.createElement("div");
   overlay.textContent = book.synopsis;
+  if(book.synopsis === undefined) {
+    overlay.textContent = "Add synopsis";
+  }
+  console.log(book.synopsis);
 
   // Style the overlay
   overlay.style.height = "100%";
