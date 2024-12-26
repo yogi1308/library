@@ -119,6 +119,7 @@ function displayBooks(currBook) {
     length.appendChild(lengthValue)
     const lengthType = document.createElement("span")
     lengthType.textContent = " "+currBook.lengthType
+    lengthType.addEventListener("click", editLengthType)
     length.appendChild(lengthType)
     title_author.appendChild(length)
 
@@ -352,9 +353,7 @@ function editLength(event) {
   const lengthSelector = event.target.closest(".book-details");
   const lengthElement = lengthSelector.querySelector("div > div > span:nth-child(1)");
   const currentLength = lengthElement.textContent;
-  console.log(currentLength);
   const book = myLibrary.find(book => book.length == currentLength);
-  console.log(book.length);
   // Create a textarea element for editing the length
   const textarea = document.createElement("textarea");
   textarea.value = currentLength;
@@ -392,6 +391,52 @@ function editLength(event) {
       // If the new length is empty, revert to the original length
       textarea.replaceWith(lengthElement);
       lengthElement.addEventListener("click", editLength);
+    }
+  });
+}
+
+function editLengthType(event) {
+  const lengthTypeSelector = event.target.closest(".book-details");
+  const lengthTypeElement = lengthTypeSelector.querySelector("div > div > span:nth-child(2)");
+  const currentLengthType = lengthTypeElement.textContent.trim();
+  const book = myLibrary.find(book => book.lengthType === currentLengthType);
+  console.log(book)
+
+  // Create a select element for editing the length type
+  const select = document.createElement("select");
+  select.style.width = "100%";
+  select.style.height = "auto";
+
+  // Create the options for the select element
+  const options = ["Pages", "Chapters"];
+  options.forEach(option => {
+    const optionElement = document.createElement("option");
+    optionElement.value = option;
+    optionElement.textContent = option;
+    select.appendChild(optionElement);
+  });
+
+  // Set the selected option based on the current length type
+  select.value = currentLengthType;
+
+  // Replace the length type element with the select element
+  lengthTypeElement.replaceWith(select);
+
+  // Handle the blur event to save the new length type
+  select.addEventListener("blur", () => {
+    const newLengthType = select.value;
+    if (newLengthType) {
+      book.lengthType = newLengthType;
+      const newLengthTypeElement = document.createElement("span");
+      newLengthTypeElement.textContent = " " + newLengthType;
+      newLengthTypeElement.style.wordBreak = "break-word";
+      newLengthTypeElement.addEventListener("click", editLengthType); // Reattach the click event listener
+      select.replaceWith(newLengthTypeElement);
+      console.log(myLibrary);
+    } else {
+      // If the new length type is empty, revert to the original length type
+      select.replaceWith(lengthTypeElement);
+      lengthTypeElement.addEventListener("click", editLengthType);
     }
   });
 }
