@@ -168,7 +168,38 @@ function displayType(event) {
       const deleteButtons = document.querySelectorAll(".deleteButton")
       deleteButtons.forEach(button => {button.style.position = "relative"; button.style.left = "80%"; button.style.backgroundColor = "rgba(265, 265, 265, 0.5)"; button.style.padding = "0"})
     }
-    else if (event.target.textContent == "List view") {}
+    else if (event.target.textContent == "List View") {
+      const main = document.querySelector(".main")
+      main.innerHTML = ""
+      main.style = ""
+      main.style.display = "block" // Change to block for list view
+      myLibrary.forEach(book => {displayBooks(book)})
+      const books = document.querySelectorAll(".book")
+      books.forEach(book => {
+          book.style.display = "flex"; // Use flexbox for layout
+          book.style.alignItems = "center"; // Center items vertically
+          book.style.width = "100%"; // Full width
+          book.style.height = "100px"
+          book.style.marginBottom = "10px"; // Add some space between books
+
+          const cover = book.querySelector(".book-cover");
+          cover.style.height = "100px"; // Maintain aspect ratio
+          cover.style.aspectRatio = "2/3"
+          cover.style.marginRight = "10px"; // Space between cover and details
+
+          const bookDots = book.querySelector(".book-details>svg")
+          bookDots.style.maxHeight = "20px"
+          bookDots.style.justifySelf = "flex-end"
+
+          const details = book.querySelector(".book-details");
+          details.style.flex = "1"; // Occupy remaining space
+          details.style.borderRadius = "5px"
+
+          const delBtn = book.querySelector(".deleteButton")
+          delBtn.style.position = "reltaive"
+          delBtn.style.left = "70%"
+      })
+    }
     else if (event.target.textContent == "Detailed view") {}
   })
 
