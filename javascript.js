@@ -43,7 +43,6 @@ TheReturnOfTheKing = new Book('The Return of the King', 'J.R.R. Tolkien', 'Unrea
 //can add genre and summary
 
 myLibrary = [Vagabond, TheSlamDunk, Berserk, OnePiece, SteelBallRun, ChainsawMan, VinLandSaga, TheAlchemist, TheHobbit, TheGreatGatsby, TheHungerGames, TheLordOfTheRings, TheSilmarillion, TheTwoTowers, TheFellowshipOfTheRing, TheReturnOfTheKing];
- console.log(myLibrary)
 function Book(title, author, status, length, lengthType, cover, synopsis) {
   // the constructor...
   this.title = title
@@ -59,7 +58,20 @@ const search = document.querySelector(".search")
 search.addEventListener("click", searchBooks)
 
 function searchBooks(event) {
-  
+  const searchContainer = document.querySelector(".search-container")
+  if (searchContainer.style.display == "flex") {
+    const searchInput = document.querySelector("#search-input")
+    searchedArray = new Array();
+    myLibrary.forEach(book => {
+      if (book.title.toLowerCase().includes(searchInput.value.toLowerCase()) || book.author.toLowerCase().includes(searchInput.value.toLowerCase())) {
+        main.innerHTML = "";
+        searchedArray.push(book);
+      }
+    });
+    searchedArray.forEach(book => {displayBooks(book)})
+  } else if (search.style.display == "none" || search.style.display == "") {
+    searchContainer.style.display = "flex";
+  }
 }
 
 function displayBooks(currBook) {
@@ -225,7 +237,6 @@ function bookCoverHover(event) {
   if(book.synopsis === undefined) {
     overlay.textContent = "Add synopsis";
   }
-  console.log(book.synopsis);
 
   // Style the overlay
   overlay.style.height = "100%";
@@ -271,7 +282,6 @@ function deleteButtonClick(event) {
   const bookToDelete = parentElement.querySelector(".book-details > div > p:nth-child(1)").textContent;
   parentElement.remove();
   myLibrary = myLibrary.filter(book => book.title !== bookToDelete);
-  console.log(myLibrary);
 }
 
 function editAuthor(event) {
@@ -303,7 +313,6 @@ function editAuthor(event) {
       newAuthorElement.style.wordBreak = "break-word";
       textarea.replaceWith(newAuthorElement)
       newAuthorElement.addEventListener("click", editAuthor);
-      console.log(myLibrary);
     } else {
       // If the new author is empty, revert to the original author
       textarea.replaceWith(authorElement)
@@ -341,7 +350,6 @@ function editTitle(event) {
       newTitleElement.style.wordBreak = "break-word";
       textarea.replaceWith(newTitleElement)
       newTitleElement.addEventListener("click", editTitle);
-      console.log(myLibrary);
     } else {
       // If the new title is empty, revert to the original title
       textarea.replaceWith(titleElement)
@@ -379,7 +387,6 @@ function editLength(event) {
   textarea.addEventListener("blur", () => {
     const newLength = textarea.value.trim();
     if (newLength) {
-      console.log(book)
       book.length = newLength;
       const newLengthElement = document.createElement("span");
       newLengthElement.textContent = newLength;
@@ -387,7 +394,6 @@ function editLength(event) {
       newLengthElement.style.width = "min-content"
       newLengthElement.addEventListener("click", editLength); // Reattach the click event listener
       textarea.replaceWith(newLengthElement);
-      console.log(myLibrary);
     } else {
       // If the new length is empty, revert to the original length
       textarea.replaceWith(lengthElement);
@@ -401,7 +407,6 @@ function editLengthType(event) {
   const lengthTypeElement = lengthTypeSelector.querySelector("div > div > span:nth-child(2)");
   const currentLengthType = lengthTypeElement.textContent.trim();
   const book = myLibrary.find(book => book.lengthType === currentLengthType);
-  console.log(book)
 
   // Create a select element for editing the length type
   const select = document.createElement("select");
@@ -433,7 +438,6 @@ function editLengthType(event) {
       newLengthTypeElement.style.wordBreak = "break-word";
       newLengthTypeElement.addEventListener("click", editLengthType); // Reattach the click event listener
       select.replaceWith(newLengthTypeElement);
-      console.log(myLibrary);
     } else {
       // If the new length type is empty, revert to the original length type
       select.replaceWith(lengthTypeElement);
@@ -462,7 +466,6 @@ function statusChange(event) {
   }
 
   book.status = event.target.textContent;
-  console.log(myLibrary);
   statusSelector.appendChild(event.target);
 
 

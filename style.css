@@ -139,7 +139,7 @@
     justify-content: space-between;
   }
 
-  .header > div {
+  .header > div:nth-child(3) {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -147,12 +147,13 @@
   }
 
   .search-container {
-    display: flex;
-    flex-grow: 1;
+    display: none; /* Initially hide the search container */
     font-size: 14px;
-    justify-content: center;
-    align-content: center;
+    flex-grow: 1; /* Make the search container grow to fill the available space */
+    justify-content: center; /* Center the search input and button */
+    align-items: center; /* Center the search input and button vertically */
     margin: 0 10px;
+    gap: 10px;
   }
 
   .search-container > input {
