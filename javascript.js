@@ -257,30 +257,27 @@ function displayBooks(currBook) {
     cover.appendChild(deleteButton);
     deleteButton.addEventListener("click", deleteButtonClick)
 
-
     const likeLabel = document.createElement("label");
-    likeLabel.classList.add("ui-like");
+    likeLabel.classList.add("like");
     
     const likeInput = document.createElement("input");
     likeInput.type = "checkbox";
     
-    const likeDiv = document.createElement("div");
-    likeDiv.classList.add("like");
-    
     const likeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    likeSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    likeSvg.setAttribute("id", "Layer_1");
+    likeSvg.setAttribute("version", "1.0");
     likeSvg.setAttribute("viewBox", "0 0 24 24");
-    likeSvg.setAttribute("fill", "");
+    likeSvg.setAttribute("xml:space", "preserve");
+    likeSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    likeSvg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
     
     const likePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    likePath.setAttribute("d", "M20.808,11.079C19.829,16.132,12,20.5,12,20.5s-7.829-4.368-8.808-9.421C2.227,6.1,5.066,3.5,8,3.5a4.444,4.444,0,0,1,4,2,4.444,4.444,0,0,1,4-2C18.934,3.5,21.773,6.1,20.808,11.079Z");
+    likePath.setAttribute("d", "M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z");
     
     likeSvg.appendChild(likePath);
-    likeDiv.appendChild(likeSvg);
     likeLabel.appendChild(likeInput);
-    likeLabel.appendChild(likeDiv);
+    likeLabel.appendChild(likeSvg);
     cover.appendChild(likeLabel);
-    
 
     book.appendChild(cover)
 
@@ -648,6 +645,19 @@ function statusChange(event) {
   book.status = event.target.textContent;
   statusSelector.appendChild(event.target);
 
+
+}
+
+function likeClicked(event) {
+  const bookLiked = event.target.closest(".book").querySelector("div>p:nth-child(1)").textContent;
+  const book = myLibrary.find(book => book.title === bookLiked);
+  if (book.favorite == true) {
+    book.favorite = ''
+  }
+  else {
+    book.favorite = ''
+  }
+  console.log(book)
 
 }
 
