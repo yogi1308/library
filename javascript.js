@@ -89,9 +89,11 @@ function searchBooks(event) {
 }
 
 function sortBooks(event) {
-  sortArray = new Array();
   const list = document.querySelector("ol")
   list.style.display = "block"
+
+  const sortReadingStatus = document.querySelector(".header > div:nth-child(3) > ol > div")
+  sortReadingStatus.addEventListener("mouseenter", sortByStatus)
 
   list.addEventListener("click", (event) => {
     if (event.target.textContent === "By Title") {
@@ -106,13 +108,38 @@ function sortBooks(event) {
       myLibrary.forEach(book => {displayBooks(book)})
     }
     else if (event.target.textContent === "By Reading Status") {
-      myLibrary.sort((a, b) => a.status.localeCompare(b.status))
-      main.innerHTML = "";
-      myLibrary.forEach(book => {displayBooks(book)})
+      const statusList = document.querySelector(".header > div:nth-child(3) > ol > div > ol")
+      statusList.style.display = "block"
+      statusList.addEventListener("mouseenter", (event) => {statusList.style.display = "block"; sortByStatus(event)})
+      statusList.addEventListener("mouseleave", (event) => {statusList.style.display = "none"})
     }
   })
   list.addEventListener("mouseenter", (event) => {list.style.display = "block"})
-  list.addEventListener("mouseleave", (event) => {list.style.display = "none"})
+  list.addEventListener("mouseleave", (event) => {list.style.display = "none"; const statusList = document.querySelector(".header > div:nth-child(3) > ol > div > ol"); statusList.style.display = "none"})
+}
+
+function sortByStatus(event) {
+  const status = document.querySelector("body > div.container > div.header > div:nth-child(3) > ol > div > ol")
+  status.addEventListener("click", (event) => {
+    if (event.target.textContent === "Unread") {
+      sortUnreadBooks = new Array();
+      sortUnreadBooks = myLibrary.filter(book => book.status === "Unread")
+      main.innerHTML = "";
+      sortUnreadBooks.forEach(book => {displayBooks(book)})
+    }
+    else if (event.target.textContent === "Started") {
+      sortStartedBooks = new Array();
+      sortStartedBooks = myLibrary.filter(book => book.status === "Started")
+      main.innerHTML = "";
+      sortStartedBooks.forEach(book => {displayBooks(book)})
+    }
+    else if (event.target.textContent === "Completed") {
+      sortCompletedBooks = new Array();
+      sortCompletedBooks = myLibrary.filter(book => book.status === "Completed")
+      main.innerHTML = "";
+      sortCompletedBooks.forEach(book => {displayBooks(book)})
+    }
+  })
 }
 
 
