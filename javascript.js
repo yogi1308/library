@@ -54,6 +54,9 @@ function Book(title, author, status, length, lengthType, cover, synopsis) {
   this.synopsis = synopsis
 }
 
+const sort = document.querySelector(".sort")
+sort.addEventListener("click", sortBooks)
+
 const search = document.querySelector(".search")
 search.addEventListener("click", searchBooks)
 
@@ -84,6 +87,11 @@ function searchBooks(event) {
   }
   searchedArray.forEach(book => {displayBooks(book)})
 }
+
+function sortBooks(event) {
+
+}
+
 
 function displayBooks(currBook) {
     const main = document.querySelector(".main")
