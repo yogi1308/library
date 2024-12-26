@@ -93,7 +93,11 @@ function searchBooks(event) {
 
 function sortBooks(event) {
   const list = document.querySelector("ol")
-  list.style.display = "block"
+
+  if (list.style.display == "block") {list.style.display = "none"}
+  else if (list.style.display == "none" || list.style.display == "") {
+    list.style.display = "block";
+  }
 
   const sortReadingStatus = document.querySelector(".header > div:nth-child(3) > ol > div")
   sortReadingStatus.addEventListener("mouseenter", sortByStatus)
@@ -150,7 +154,11 @@ function sortByStatus(event) {
 
 function displayType(event) {
   const displayList = document.querySelector(".display-list")
-  displayList.style.display = "block"
+  if (displayList.style.display == "block") {displayList.style.display = "none"}
+  else if (displayList.style.display == "none" || displayList.style.display == "") {
+    displayList.style.display = "block";
+  }
+
   displayList.addEventListener("click", (event) => {
     if (event.target.textContent == "Regular Grid") {
       main.innerHTML = ""
@@ -200,7 +208,9 @@ function displayType(event) {
           delBtn.style.left = "70%"
       })
     }
-    else if (event.target.textContent == "Detailed view") {}
+    else if (event.target.textContent == "Detailed view") {
+      
+    }
   })
 
 
