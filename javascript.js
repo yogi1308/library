@@ -151,6 +151,26 @@ function sortByStatus(event) {
 function displayType(event) {
   const displayList = document.querySelector(".display-list")
   displayList.style.display = "block"
+  displayList.addEventListener("click", (event) => {
+    if (event.target.textContent == "Regular Grid") {
+      main.innerHTML = ""
+      main.style = ""
+      myLibrary.forEach(book => {displayBooks(book)})
+    }
+    else if (event.target.textContent == "Compact Grid") {
+      const main = document.querySelector(".main")
+      main.innerHTML = ""
+      main.style.display = "grid"
+      main.style.gridTemplateColumns = "repeat(auto-fill, minmax(100px, 0.5fr))"
+      main.style.gridGap = "10px"
+      main.style.fontSize = "10px"
+      myLibrary.forEach(book => {displayBooks(book)})
+      const deleteButtons = document.querySelectorAll(".deleteButton")
+      deleteButtons.forEach(button => {button.style.position = "relative"; button.style.left = "80%"; button.style.backgroundColor = "rgba(265, 265, 265, 0.5)"; button.style.padding = "0"})
+    }
+    else if (event.target.textContent == "List view") {}
+    else if (event.target.textContent == "Detailed view") {}
+  })
 
 
 
@@ -333,6 +353,8 @@ function bookCoverHover(event) {
   overlay.style.backdropFilter = "blur(2px)";
   overlay.style.padding = "5px";
   overlay.style.width = "100%";
+  overlay.style.textShadow = "2px 2px black";
+
 
   // Parent height and truncation logic
   const parentHeight = cover.offsetHeight;
