@@ -89,10 +89,28 @@ function searchBooks(event) {
 }
 
 function sortBooks(event) {
+  sortArray = new Array();
   const list = document.querySelector("ol")
   list.style.display = "block"
 
-  list.addEventListener("click", (event) => {})
+  list.addEventListener("click", (event) => {
+    if (event.target.textContent === "By Title") {
+      myLibrary.sort((a, b) => a.title.localeCompare(b.title))
+      main.innerHTML = "";
+      myLibrary.forEach(book => {displayBooks(book)})
+      console.log(myLibrary)
+    }
+    else if (event.target.textContent === "By Author Name") {
+      myLibrary.sort((a, b) => a.author.localeCompare(b.author))
+      main.innerHTML = "";
+      myLibrary.forEach(book => {displayBooks(book)})
+    }
+    else if (event.target.textContent === "By Reading Status") {
+      myLibrary.sort((a, b) => a.status.localeCompare(b.status))
+      main.innerHTML = "";
+      myLibrary.forEach(book => {displayBooks(book)})
+    }
+  })
   list.addEventListener("mouseenter", (event) => {list.style.display = "block"})
   list.addEventListener("mouseleave", (event) => {list.style.display = "none"})
 }
