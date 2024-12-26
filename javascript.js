@@ -112,8 +112,14 @@ function displayBooks(currBook) {
     author.addEventListener("click", editAuthor)
     title_author.appendChild(author)
 
-    const length = document.createElement("p")
-    length.textContent = currBook.length + " " + currBook.lengthType
+    const length = document.createElement("div")
+    const lengthValue = document.createElement("span")
+    lengthValue.textContent = currBook.length
+    lengthValue.addEventListener("click", editLength)
+    length.appendChild(lengthValue)
+    const lengthType = document.createElement("span")
+    lengthType.textContent = " "+currBook.lengthType
+    length.appendChild(lengthType)
     title_author.appendChild(length)
 
     const status = document.createElement("p")
@@ -342,6 +348,53 @@ function editTitle(event) {
   });
 }
 
+function editLength(event) {
+  const lengthSelector = event.target.closest(".book-details");
+  const lengthElement = lengthSelector.querySelector("div > div > span:nth-child(1)");
+  const currentLength = lengthElement.textContent;
+  console.log(currentLength);
+  const book = myLibrary.find(book => book.length == currentLength);
+  console.log(book.length);
+  // Create a textarea element for editing the length
+  const textarea = document.createElement("textarea");
+  textarea.value = currentLength;
+  textarea.style.width = "100%";
+  textarea.style.height = "auto";
+  textarea.style.boxSizing = "border-box";
+  textarea.setAttribute("pattern", "[0-9]*"); // Enforce numeric input
+
+  // Replace the length element with the textarea
+  lengthElement.replaceWith(textarea);
+
+  // Focus the textarea and select the text
+  textarea.focus();
+  textarea.select();
+
+  // Handle the input event to restrict to numeric input
+  textarea.addEventListener("input", () => {
+    textarea.value = textarea.value.replace(/[^0-9]/g, ''); // Remove non-numeric characters
+  });
+
+  // Handle the blur event to save the new length
+  textarea.addEventListener("blur", () => {
+    const newLength = textarea.value.trim();
+    if (newLength) {
+      console.log(book)
+      book.length = newLength;
+      const newLengthElement = document.createElement("span");
+      newLengthElement.textContent = newLength;
+      newLengthElement.style.wordBreak = "break-word";
+      newLengthElement.style.width = "min-content"
+      newLengthElement.addEventListener("click", editLength); // Reattach the click event listener
+      textarea.replaceWith(newLengthElement);
+      console.log(myLibrary);
+    } else {
+      // If the new length is empty, revert to the original length
+      textarea.replaceWith(lengthElement);
+      lengthElement.addEventListener("click", editLength);
+    }
+  });
+}
 
 function statusChange(event) {
   statusSelector = event.target.closest(".book-details")
