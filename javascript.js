@@ -89,7 +89,12 @@ function searchBooks(event) {
 }
 
 function sortBooks(event) {
+  const list = document.querySelector("ol")
+  list.style.display = "block"
 
+  list.addEventListener("click", (event) => {})
+  list.addEventListener("mouseenter", (event) => {list.style.display = "block"})
+  list.addEventListener("mouseleave", (event) => {list.style.display = "none"})
 }
 
 
