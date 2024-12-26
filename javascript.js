@@ -109,6 +109,7 @@ function displayBooks(currBook) {
 
     const author = document.createElement("p")
     author.textContent = currBook.author
+    author.addEventListener("click", editAuthor)
     title_author.appendChild(author)
 
     const length = document.createElement("p")
@@ -263,6 +264,44 @@ function deleteButtonClick(event) {
   parentElement.remove();
   myLibrary = myLibrary.filter(book => book.title !== bookToDelete);
   console.log(myLibrary);
+}
+
+function editAuthor(event) {
+  const authorSelector = event.target.closest(".book-details");
+  const authorElement = authorSelector.querySelector("div>p:nth-child(2)");
+  const currentAuthor = authorElement.textContent;
+  const book = myLibrary.find(book => book.author === currentAuthor);
+
+  // Create a textarea element for editing the author
+  const textarea = document.createElement("textarea");
+  textarea.value = currentAuthor;
+  textarea.style.width = "100%";
+  textarea.style.height = "auto";
+
+  // Replace the author element with the textarea
+  authorElement.replaceWith(textarea);
+
+  // Focus the textarea and select the text
+  textarea.focus();
+  textarea.select();
+
+  // Handle the blur event to save the new author
+  textarea.addEventListener("blur", () => {
+    const newAuthor = textarea.value.trim();
+    if (newAuthor) {
+      book.author = newAuthor;
+      const newAuthorElement = document.createElement("p");
+      newAuthorElement.textContent = newAuthor;
+      newAuthorElement.style.wordBreak = "break-word";
+      textarea.replaceWith(newAuthorElement)
+      newAuthorElement.addEventListener("click", editAuthor);
+      console.log(myLibrary);
+    } else {
+      // If the new author is empty, revert to the original author
+      textarea.replaceWith(authorElement)
+      authorElement.addEventListener("click", editAuthor);
+    }
+  });
 }
 
 function editTitle(event) {
