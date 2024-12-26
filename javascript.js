@@ -262,6 +262,7 @@ function displayBooks(currBook) {
     
     const likeInput = document.createElement("input");
     likeInput.type = "checkbox";
+    likeInput.addEventListener("click", likeClicked)
     
     const likeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     likeSvg.setAttribute("id", "Layer_1");
@@ -278,6 +279,8 @@ function displayBooks(currBook) {
     likeLabel.appendChild(likeInput);
     likeLabel.appendChild(likeSvg);
     cover.appendChild(likeLabel);
+
+    if (currBook.favorite == 'true') {likeSvg.style.fill = "#E3474F"}
 
     book.appendChild(cover)
 
@@ -649,16 +652,19 @@ function statusChange(event) {
 }
 
 function likeClicked(event) {
-  const bookLiked = event.target.closest(".book").querySelector("div>p:nth-child(1)").textContent;
-  const book = myLibrary.find(book => book.title === bookLiked);
-  if (book.favorite == true) {
-    book.favorite = ''
+  const bookLiked = event.target.closest(".book")
+  const likeToChange = bookLiked.querySelector("div>p:nth-child(1)").textContent;
+  const likeButton = bookLiked.querySelector(".like > svg")
+  const book = myLibrary.find(book => book.title === likeToChange);
+  if (book.favorite == '') {
+    book.favorite = 'true'
+    likeButton.style.fill = "#E3474F"
   }
   else {
     book.favorite = ''
+    likeButton.style.fill = "#666"
   }
   console.log(book)
-
 }
 
 
