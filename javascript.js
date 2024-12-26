@@ -57,21 +57,32 @@ function Book(title, author, status, length, lengthType, cover, synopsis) {
 const search = document.querySelector(".search")
 search.addEventListener("click", searchBooks)
 
+const searchBar = document.querySelector("#search-input")
+searchBar.addEventListener("input", searchBooks)
+
 function searchBooks(event) {
   const searchContainer = document.querySelector(".search-container")
-  if (searchContainer.style.display == "flex") {
-    const searchInput = document.querySelector("#search-input")
-    searchedArray = new Array();
-    myLibrary.forEach(book => {
-      if (book.title.toLowerCase().includes(searchInput.value.toLowerCase()) || book.author.toLowerCase().includes(searchInput.value.toLowerCase())) {
-        main.innerHTML = "";
-        searchedArray.push(book);
-      }
-    });
-    searchedArray.forEach(book => {displayBooks(book)})
-  } else if (search.style.display == "none" || search.style.display == "") {
+  if (search.style.display == "none" || search.style.display == "") {
     searchContainer.style.display = "flex";
   }
+  const searchInput = document.querySelector("#search-input")
+  searchedArray = new Array();
+  myLibrary.forEach(book => {
+  if (book.title.toLowerCase().includes(searchInput.value.toLowerCase()) || book.author.toLowerCase().includes(searchInput.value.toLowerCase())) {
+    main.innerHTML = "";
+    searchedArray.push(book);
+  }
+  });
+
+  if (searchedArray.length == 0) {
+    main.innerHTML = "";
+    const noResults = document.createElement("div")
+    noResults.textContent = "No results found"
+    noResults.style.fontSize = "24px"
+    noResults.style.fontWeight = "bold"
+    main.appendChild(noResults)
+  }
+  searchedArray.forEach(book => {displayBooks(book)})
 }
 
 function displayBooks(currBook) {

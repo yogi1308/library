@@ -153,7 +153,6 @@
     justify-content: center; /* Center the search input and button */
     align-items: center; /* Center the search input and button vertically */
     margin: 0 10px;
-    gap: 10px;
   }
 
   .search-container > input {
