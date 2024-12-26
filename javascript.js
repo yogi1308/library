@@ -55,10 +55,11 @@ function Book(title, author, status, length, lengthType, cover, synopsis) {
   this.synopsis = synopsis
 }
 
+const search = document.querySelector(".search")
+search.addEventListener("click", searchBooks)
 
-function addBookToLibrary() {
-  // do stuff here
-
+function searchBooks(event) {
+  
 }
 
 function displayBooks(currBook) {

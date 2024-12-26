@@ -146,6 +146,18 @@
     min-width: 80px;
   }
 
+  .search-container {
+    display: flex;
+    flex-grow: 1;
+    font-size: 14px;
+    justify-content: center;
+    align-content: center;
+    margin: 0 10px;
+  }
+
+  .search-container > input {
+    width: 100%;
+  }
   .main {
     font-size: 16px;
     grid-row: span 1;
@@ -170,7 +182,7 @@
     background-image: url(https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421577449/vagabond-vol-37-9781421577449_hr.jpg);
     background-size: cover;
     border-radius: 5px;
-    
+
   }
 
   .book-details {
