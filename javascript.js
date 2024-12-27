@@ -19,26 +19,23 @@ ChainsawMan = new Book('Chainsaw Man', 'Tatsuki Fujimoto', 'Completed', 97, 'Cha
 
 VinLandSaga = new Book('Vinland Saga', 'Makoto Yukimura', 'Completed', 54, 'Chapters', 'https://m.media-amazon.com/images/I/91+Qs9DaFZL.jpg', 'Vinland Saga is a Japanese historical manga series written and illustrated by Makoto Yukimura. The series is published by Kodansha, and was first serialized in the youth-targeted Weekly Shōnen Magazine before moving to the monthly manga magazine Afternoon, aimed at young adult readers. The story is set in 11th-century Europe and follows Thorfinn, a young Viking warrior, as he seeks revenge against the mercenary leader Askeladd, who killed his father. The series explores themes of revenge, redemption, and the harsh realities of Viking life.', 'true', 'Vinland Saga is a historical and engaging series that transports readers to the harsh and unforgiving world of 11th-century Europe. Makoto Yukimura\'s meticulous attention to detail and deep understanding of Viking culture create a story that is both authentic and captivating. The journey of Thorfinn as he seeks revenge and ultimately finds redemption is a powerful and emotional tale. Vinland Saga is a series that explores the complexities of human nature and the consequences of violence. It\'s a gripping and thought-provoking read that leaves a lasting impression.', 9);
 
-TheAlchemist = new Book('The Alchemist', 'Paulo Coelho', 'Unread', 197, 'Pages', 'https://i.harperapps.com/hcuk/covers/9780007487943/x400.jpg?ph=harperreach_coming_soon.png', 'The Alchemist is a novel by Brazilian author Paulo Coelho that was first published in 1988. Originally written in Portuguese, it became a widely translated international bestseller. An allegorical novel, The Alchemist follows a young Andalusian shepherd named Santiago in his journey to the pyramids of Egypt, after having a recurring dream of finding a treasure there. Along the way, he meets various characters who guide him and teach him about the importance of following one\'s dreams, listening to one\'s heart, and recognizing the omens scattered along life\'s path.', '', '', 0);
+TheAlchemist = new Book('The Alchemist', 'Paulo Coelho', 'Unread', 197, 'Pages', 'https://i.harperapps.com/hcuk/covers/9780007487943/x400.jpg?ph=harperreach_coming_soon.png', 'The Alchemist is a novel by Brazilian author Paulo Coelho that was first published in 1988. Originally written in Portuguese, it became a widely translated international bestseller. An allegorical novel, The Alchemist follows a young Andalusian shepherd named Santiago in his journey to the pyramids of Egypt, after having a recurring dream of finding a treasure there. Along the way, he meets various characters who guide him and teach him about the importance of following one\'s dreams, listening to one\'s heart, and recognizing the omens scattered along life\'s path.', '', '', '');
 
 TheHobbit = new Book('The Hobbit', 'J.R.R. Tolkien', 'Unread', 310, 'Pages', 'https://m.media-amazon.com/images/I/712cDO7d73L.jpg' , 'The Hobbit, or There and Back Again is a children\'s fantasy novel by English author J. R. R. Tolkien. It was published on 21 September 1937 to wide critical acclaim, being nominated for the Carnegie Medal and awarded a prize from the New York Herald Tribune for best juvenile fiction. The book remains popular and is recognized as a classic in children\'s literature. The story follows the journey of Bilbo Baggins, a hobbit who is reluctantly drawn into an epic quest to reclaim the lost Dwarf Kingdom of Erebor from the fearsome dragon Smaug.', '', '', 0);
 
-TheGreatGatsby = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 'Unread', 180, 'Pages', 'https://m.media-amazon.com/images/I/61OTNorhqVS._AC_UF894,1000_QL80_.jpg', 'The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway\'s interactions with mysterious millionaire Jay Gatsby and Gatsby\'s obsession to reunite with his former lover, Daisy Buchanan. The novel explores themes of decadence, idealism, resistance to change, social upheaval, and excess, creating a portrait of the Roaring Twenties that has been described as a cautionary tale regarding the American Dream.', '', '', 0);
+TheGreatGatsby = new Book('The Great Gatsby', 'F. Scott Fitzgerald', 'Unread', 180, 'Pages', 'https://m.media-amazon.com/images/I/61OTNorhqVS._AC_UF894,1000_QL80_.jpg', 'The Great Gatsby is a 1925 novel by American writer F. Scott Fitzgerald. Set in the Jazz Age on Long Island, near New York City, the novel depicts first-person narrator Nick Carraway\'s interactions with mysterious millionaire Jay Gatsby and Gatsby\'s obsession to reunite with his former lover, Daisy Buchanan. The novel explores themes of decadence, idealism, resistance to change, social upheaval, and excess, creating a portrait of the Roaring Twenties that has been described as a cautionary tale regarding the American Dream.', '', '', '');
 
-TheHungerGames = new Book('The Hunger Games', 'Suzanne Collins', 'Unread', 374, 'Pages', 'https://m.media-amazon.com/images/I/71un2hI4mcL.jpg', 'The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins. It is written in the voice of 16-year-old Katniss Everdeen, who lives in the future, post-apocalyptic nation of Panem in North America. The Capitol, a highly advanced metropolis, exercises political control over the rest of the nation. The story follows Katniss as she volunteers to take her sister\'s place in the Hunger Games, a televised event in which children fight to the death. The novel explores themes of survival, government control, and the effects of violence on society.', '', '', 0);
+TheHungerGames = new Book('The Hunger Games', 'Suzanne Collins', 'Unread', 374, 'Pages', 'https://m.media-amazon.com/images/I/71un2hI4mcL.jpg', 'The Hunger Games is a 2008 dystopian novel by the American writer Suzanne Collins. It is written in the voice of 16-year-old Katniss Everdeen, who lives in the future, post-apocalyptic nation of Panem in North America. The Capitol, a highly advanced metropolis, exercises political control over the rest of the nation. The story follows Katniss as she volunteers to take her sister\'s place in the Hunger Games, a televised event in which children fight to the death. The novel explores themes of survival, government control, and the effects of violence on society.', '', '', '');
 
-TheLordOfTheRings = new Book('The Lord of the Rings', 'J.R.R. Tolkien', 'Unread', 1178, 'Pages', 'https://s26162.pcdn.co/wp-content/uploads/2017/05/the-lord-of-the-rings-book-cover.jpg', 'The Lord of the Rings is an epic high-fantasy novel by the English author and scholar J. R. R. Tolkien. Set in Middle-earth, the world at some distant time in the past, the story began as a sequel to Tolkien\'s 1937 children\'s book The Hobbit, but eventually developed into a much larger work. The novel is divided into three volumes: The Fellowship of the Ring, The Two Towers, and The Return of the King. It follows the quest to destroy the One Ring, which was created by the Dark Lord Sauron, and the journey of the hobbit Frodo Baggins and his companions.', '', '', 0);
-TheSilmarillion = new Book('The Silmarillion', 'J.R.R. Tolkien', 'Unread', 365, 'Pages', 'https://m.media-amazon.com/images/I/71Gt0U59D3L._AC_UF894,1000_QL80_.jpg', 'The Silmarillion is a collection of mythopoeic works by English writer J. R. R. Tolkien, edited and published posthumously by his son, Christopher Tolkien, in 1977, with assistance from Guy Gavriel Kay. It is the primary and essential source material for Tolkien\'s Middle-earth legendarium. The book includes several works, the most prominent of which is the "Quenta Silmarillion," which tells the history of the First Age of Middle-earth, including the creation of the world, the rise and fall of the great Elven kingdoms, and the wars against the dark lord Morgoth.', '', )
+TheLordOfTheRings = new Book('The Lord of the Rings', 'J.R.R. Tolkien', 'Unread', 1178, 'Pages', 'https://s26162.pcdn.co/wp-content/uploads/2017/05/the-lord-of-the-rings-book-cover.jpg', 'The Lord of the Rings is an epic high-fantasy novel by the English author and scholar J. R. R. Tolkien. Set in Middle-earth, the world at some distant time in the past, the story began as a sequel to Tolkien\'s 1937 children\'s book The Hobbit, but eventually developed into a much larger work. The novel is divided into three volumes: The Fellowship of the Ring, The Two Towers, and The Return of the King. It follows the quest to destroy the One Ring, which was created by the Dark Lord Sauron, and the journey of the hobbit Frodo Baggins and his companions.', '', '', '');
+TheSilmarillion = new Book('The Silmarillion', 'J.R.R. Tolkien', 'Unread', 365, 'Pages', 'https://m.media-amazon.com/images/I/71Gt0U59D3L._AC_UF894,1000_QL80_.jpg', 'The Silmarillion is a collection of mythopoeic works by English writer J. R. R. Tolkien, edited and published posthumously by his son, Christopher Tolkien, in 1977, with assistance from Guy Gavriel Kay. It is the primary and essential source material for Tolkien\'s Middle-earth legendarium. The book includes several works, the most prominent of which is the "Quenta Silmarillion," which tells the history of the First Age of Middle-earth, including the creation of the world, the rise and fall of the great Elven kingdoms, and the wars against the dark lord Morgoth.', '', '', '');
 
 TheTwoTowers = new Book('The Two Towers', 'J.R.R. Tolkien', 'Unread', 322, 'Pages', 'https://m.media-amazon.com/images/I/71nNxfSvGnL._UF1000,1000_QL80_.jpg', 'The Two Towers is the second volume of J.R.R. Tolkien\'s high fantasy novel The Lord of the Rings. It is preceded by The Fellowship of the Ring and followed by The Return of the King. The story continues the quest to destroy the One Ring, following the separate journeys of the members of the Fellowship after they are scattered. The volume is divided into two books: Book Three, which focuses on the adventures of Aragorn, Legolas, Gimli, Merry, and Pippin, and Book Four, which follows Frodo and Sam as they make their way to Mordor.', '', )
 
-TheFellowshipOfTheRing = new Book('The Fellowship of the Ring', 'J.R.R. Tolkien', 'Unread', 398, 'Pages', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoX5QopXUKl6j79ro89axxAkcC253ryvX7Gg&shttps://ic.pics.livejournal.com/tree_lady/14285127/10506/10506_600.jpg', 'The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It is followed by The Two Towers and The Return of the King. The story begins in the Shire, where the hobbit Frodo Baggins inherits the One Ring from his uncle Bilbo. Frodo sets out on a journey to destroy the Ring, accompanied by his friends Sam, Merry, and Pippin, and later joined by Aragorn, Legolas, Gimli, Boromir, and Gandalf. Together, they form the Fellowship of the Ring, united in their quest to save Middle-earth.', '', )
+TheFellowshipOfTheRing = new Book('The Fellowship of the Ring', 'J.R.R. Tolkien', 'Unread', 398, 'Pages', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoX5QopXUKl6j79ro89axxAkcC253ryvX7Gg&shttps://ic.pics.livejournal.com/tree_lady/14285127/10506/10506_600.jpg', 'The Fellowship of the Ring is the first of three volumes of the epic novel The Lord of the Rings by the English author J. R. R. Tolkien. It is followed by The Two Towers and The Return of the King. The story begins in the Shire, where the hobbit Frodo Baggins inherits the One Ring from his uncle Bilbo. Frodo sets out on a journey to destroy the Ring, accompanied by his friends Sam, Merry, and Pippin, and later joined by Aragorn, Legolas, Gimli, Boromir, and Gandalf. Together, they form the Fellowship of the Ring, united in their quest to save Middle-earth.', '', '', '')
 
-TheReturnOfTheKing = new Book('The Return of the King', 'J.R.R. Tolkien', 'Unread', 347, 'Pages', 'https://www.knjizara-dominovic.hr/upload/catalog/product/8086/249042_the-return-ofthe-king-the-lord-of-the-rings-book-3-return-of-the-king-vol3.jpg', 'The Return of the King is the third and final volume of J.R.R. Tolkien\'s The Lord of the Rings, following The Fellowship of the Ring and The Two Towers. The story begins in the kingdom of Gondor, which is soon to be attacked by the Dark Lord Sauron. The volume is divided into two books: Book Five, which focuses on the war in Gondor and the efforts of Aragorn, Gandalf, and their allies to defend the city, and Book Six, which follows Frodo and Sam as they make their final journey to Mount Doom to destroy the One Ring. The novel concludes with the defeat of Sauron and the restoration of peace to Middle-earth.', '', )
+TheReturnOfTheKing = new Book('The Return of the King', 'J.R.R. Tolkien', 'Unread', 347, 'Pages', 'https://www.knjizara-dominovic.hr/upload/catalog/product/8086/249042_the-return-ofthe-king-the-lord-of-the-rings-book-3-return-of-the-king-vol3.jpg', 'The Return of the King is the third and final volume of J.R.R. Tolkien\'s The Lord of the Rings, following The Fellowship of the Ring and The Two Towers. The story begins in the kingdom of Gondor, which is soon to be attacked by the Dark Lord Sauron. The volume is divided into two books: Book Five, which focuses on the war in Gondor and the efforts of Aragorn, Gandalf, and their allies to defend the city, and Book Six, which follows Frodo and Sam as they make their final journey to Mount Doom to destroy the One Ring. The novel concludes with the defeat of Sauron and the restoration of peace to Middle-earth.', '', '')
 
-
-// displayBooks(Vagabond)
-//can add genre and summary
 
 myLibrary = [Vagabond, TheSlamDunk, Berserk, OnePiece, SteelBallRun, ChainsawMan, VinLandSaga, TheAlchemist, TheHobbit, TheGreatGatsby, TheHungerGames, TheLordOfTheRings, TheSilmarillion, TheTwoTowers, TheFellowshipOfTheRing, TheReturnOfTheKing];
 function Book(title, author, status, length, lengthType, cover, synopsis, favorite, review, rating) {
@@ -67,10 +64,12 @@ const search = document.querySelector(".search")
 search.addEventListener("click", searchBooks)
 
 const searchBar = document.querySelector("#search-input")
-searchBar.addEventListener("input", searchBooks)
+searchBar.addEventListener("keydown", (event) => {if (event.key === "Enter") {searchBooks()}});
 
 const library = document.querySelector(".header > p")
-library.addEventListener("click", () => {main.innerHTML = ""; myLibrary.forEach(book => displayBooks(book))})
+library.addEventListener("click", () => {main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})})
+
+let viewType = "regular"
 
 function searchBooks(event) {
   const searchContainer = document.querySelector(".search-container")
@@ -95,7 +94,7 @@ function searchBooks(event) {
     noResults.style.fontWeight = "bold"
     main.appendChild(noResults)
   }
-  searchedArray.forEach(book => {displayBooks(book)})
+  searchedArray.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
 }
 
 function sortBooks(event) {
@@ -113,22 +112,22 @@ function sortBooks(event) {
     if (event.target.textContent === "By Title") {
       const titleSortArray = [...myLibrary].sort((a, b) => a.title.localeCompare(b.title));
       main.innerHTML = "";
-      titleSortArray.forEach(book => {displayBooks(book)})
+      titleSortArray.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book); console.log("list view");}})
       console.log(myLibrary)
     }
     else if (event.target.textContent === "By Author Name") {
       AuthorSortArray = [...myLibrary].sort((a, b) => a.author.localeCompare(b.author));
       main.innerHTML = "";
-      AuthorSortArray.forEach(book => {displayBooks(book)})
+      AuthorSortArray.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
     }
     else if (event.target.textContent === "Date Added") {
       main.innerHTML = ""
-      myLibrary.forEach(book => {displayBooks(book)})
+      myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
     }
     else if (event.target.textContent === "Favorites") {
       favoriteSort = [...myLibrary].filter(book => book.favorite === 'true')
       main.innerHTML = ""
-      favoriteSort.forEach(book => {displayBooks(book)})
+      favoriteSort.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
     }
     else if (event.target.textContent === "By Reading Status •") {
       const statusList = document.querySelector(".header > div:nth-child(3) > ol > div > ol")
@@ -148,19 +147,19 @@ function sortByStatus(event) {
       sortUnreadBooks = new Array();
       sortUnreadBooks = myLibrary.filter(book => book.status === "Unread")
       main.innerHTML = "";
-      sortUnreadBooks.forEach(book => {displayBooks(book)})
+      sortUnreadBooks.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
     }
     else if (event.target.textContent === "Started") {
       sortStartedBooks = new Array();
       sortStartedBooks = myLibrary.filter(book => book.status === "Started")
       main.innerHTML = "";
-      sortStartedBooks.forEach(book => {displayBooks(book)})
+      sortStartedBooks.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
     }
     else if (event.target.textContent === "Completed") {
       sortCompletedBooks = new Array();
       sortCompletedBooks = myLibrary.filter(book => book.status === "Completed")
       main.innerHTML = "";
-      sortCompletedBooks.forEach(book => {displayBooks(book)})
+      sortCompletedBooks.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
     }
   })
 }
@@ -176,20 +175,23 @@ function displayType(event) {
     if (event.target.textContent == "Regular Grid") {
       main.innerHTML = ""
       main.style = ""
-      myLibrary.forEach(book => {displayBooks(book)})
+      myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
+      viewType = "regular"
     }
     else if (event.target.textContent == "Compact Grid") {
-      const main = document.querySelector(".main")
+      const main = document.querySelector('.main')
       main.innerHTML = ""
       main.style.display = "grid"
       main.style.gridTemplateColumns = "repeat(auto-fill, minmax(100px, 0.5fr))"
       main.style.gridGap = "10px"
-      main.style.fontSize = "10px"
-      myLibrary.forEach(book => {displayBooks(book)})
+      main.style.fontSize = "10px";
+      myLibrary.forEach(book => {displayCompactBooks(book)})
       const deleteButtons = document.querySelectorAll(".deleteButton")
       deleteButtons.forEach(button => {button.style.position = "relative"; button.style.left = "80%"; button.style.backgroundColor = "rgba(265, 265, 265, 0.5)"; button.style.padding = "0"})
+      viewType = "compact"
     }
     else if (event.target.textContent == "List View") {
+      viewType = "list"
       const main = document.querySelector(".main")
       main.innerHTML = ""
       main.style = ""
@@ -221,13 +223,7 @@ function displayType(event) {
           delBtn.style.left = "70%"
       })
     }
-    else if (event.target.textContent == "Detailed view") {
-      
-    }
   })
-
-
-
 
 
   displayList.addEventListener("mouseenter", (event) => {displayList.style.display = "block"})
@@ -246,8 +242,9 @@ function displayBooks(currBook) {
     cover.style.backgroundImage = `url(${currBook.cover})`
     cover.style.backgroundSize = "cover"
     cover.style.backgroundPosition = "center"
-    cover.addEventListener("mouseenter", bookCoverHover); // Add mouseover event listener
-    cover.addEventListener("mouseleave", bookCoverMouseOut); // Add mouseout event listener
+    cover.addEventListener("mouseenter", bookCoverHover); 
+    cover.addEventListener("mouseleave", bookCoverMouseOut); 
+    cover.addEventListener("click", bookCoverClick); 
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("deleteButton");
@@ -305,10 +302,13 @@ function displayBooks(currBook) {
     const title = document.createElement("p")
     title.addEventListener("click", editTitle)
     title.textContent = currBook.title
+    title.style.fontSize = "18px"
     title_author.appendChild(title)
 
     const author = document.createElement("p")
     author.textContent = currBook.author
+    author.style.color = "gray"
+    author.style.fontSize = "16px"
     author.addEventListener("click", editAuthor)
     title_author.appendChild(author)
 
@@ -317,6 +317,7 @@ function displayBooks(currBook) {
     const length = document.createElement("div")
     const lengthValue = document.createElement("span")
     lengthValue.textContent = currBook.length
+    length.style.fontSize = "14px"
     lengthValue.addEventListener("click", editLength)
     length.appendChild(lengthValue)
     const lengthType = document.createElement("span")
@@ -339,6 +340,7 @@ function displayBooks(currBook) {
         status.style.color = "green"
     }
 
+    status.style.fontSize = "14px"
     status.addEventListener("click", statusChange)
 
 
@@ -361,6 +363,281 @@ function displayBooks(currBook) {
     details.appendChild(buttons);
     
     main.appendChild(book)
+
+}
+
+function displayCompactBooks(currBook) {
+  const main = document.querySelector(".main")
+
+  const book = document.createElement("div")
+  book.classList.add("book")
+
+  const cover = document.createElement("div")
+  cover.classList.add("book-cover")
+  cover.style.backgroundImage = `url(${currBook.cover})`
+  cover.style.backgroundSize = "cover"
+  cover.style.backgroundPosition = "center"
+  cover.addEventListener("mouseenter", bookCoverHover); 
+  cover.addEventListener("mouseleave", bookCoverMouseOut); 
+  cover.addEventListener("click", bookCoverClick); 
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("deleteButton");
+
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("viewBox", "0 0 15 17.5");
+  svg.setAttribute("height", "17.5");
+  svg.setAttribute("width", "15");
+  svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  svg.classList.add("icon");
+
+  const iconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  iconPath.setAttribute("transform", "translate(-2.5 -1.25)");
+  iconPath.setAttribute("d", "M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z");
+  iconPath.setAttribute("id", "Fill");
+
+  svg.appendChild(iconPath);
+  deleteButton.appendChild(svg);
+  cover.appendChild(deleteButton);
+  deleteButton.addEventListener("click", deleteButtonClick)
+
+  const likeLabel = document.createElement("label");
+  likeLabel.classList.add("like");
+  
+  const likeInput = document.createElement("input");
+  likeInput.type = "checkbox";
+  likeInput.addEventListener("click", likeClicked)
+  
+  const likeSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  likeSvg.setAttribute("id", "Layer_1");
+  likeSvg.setAttribute("version", "1.0");
+  likeSvg.setAttribute("viewBox", "0 0 24 24");
+  likeSvg.setAttribute("xml:space", "preserve");
+  likeSvg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  likeSvg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+  
+  const likePath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  likePath.setAttribute("d", "M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z");
+  
+  likeSvg.appendChild(likePath);
+  likeLabel.appendChild(likeInput);
+  likeLabel.appendChild(likeSvg);
+  cover.appendChild(likeLabel);
+
+  if (currBook.favorite == 'true') {likeSvg.style.fill = "#E3474F"}
+
+  book.appendChild(cover)
+
+  const details = document.createElement("div")
+  details.classList.add("book-details")
+  book.appendChild(details)
+
+  const title_author = document.createElement("div")
+
+  const title = document.createElement("p")
+  title.addEventListener("click", editTitle)
+  title.textContent = currBook.title
+  title_author.appendChild(title)
+
+  const author = document.createElement("p")
+  author.textContent = currBook.author
+  author.style.color = "gray"
+  author.addEventListener("click", editAuthor)
+  title_author.appendChild(author)
+
+    
+
+  const length = document.createElement("div")
+  const lengthValue = document.createElement("span")
+  lengthValue.textContent = currBook.length
+  lengthValue.addEventListener("click", editLength)
+  length.appendChild(lengthValue)
+  const lengthType = document.createElement("span")
+  lengthType.textContent = " "+currBook.lengthType
+  lengthType.addEventListener("click", editLengthType)
+  length.appendChild(lengthType)
+  title_author.appendChild(length)
+
+  const status = document.createElement("p")
+  if (currBook.status === "Unread") {
+      status.textContent = "Unread"
+      status.style.color = "red"
+  }
+  else if (currBook.status === "Started") {
+      status.textContent = "Started"
+      status.style.color = "blue"
+  }
+  else {
+      status.textContent = "Completed"
+      status.style.color = "green"
+  }
+
+  status.addEventListener("click", statusChange)
+
+
+  title_author.appendChild(status)
+
+  details.appendChild(title_author)
+
+  
+  const buttons = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  buttons.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  buttons.setAttribute("viewBox", "0 0 24 24");
+  const titleElement = document.createElementNS("http://www.w3.org/2000/svg", "title");
+  titleElement.textContent = "dots-vertical";
+  buttons.appendChild(titleElement);
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z");
+  buttons.appendChild(path);
+  buttons.addEventListener("click", editButtonClick)
+  details.appendChild(buttons);
+  
+  main.appendChild(book)
+
+}
+
+function listView(currBook) {
+  newmain = document.querySelector(".main")
+  book = document.createElement("div")
+  book.classList.add("book")
+  book.style.display = "flex"; // Use flexbox for layout
+  book.style.alignItems = "center"; // Center items vertically
+  book.style.width = "100%"; // Full width
+
+  cover = document.createElement("div")
+  cover.classList.add("book-cover")
+  cover.style.height = "100px"; // Maintain aspect ratio
+  cover.style.aspectRatio = "2/3"
+  cover.style.backgroundImage = `url(${currBook.cover})`
+  cover.style.backgroundSize = "cover"
+  cover.style.backgroundPosition = "center"
+  cover.style.marginRight = "10px"; // Space between cover and details
+
+  const likeBtn = document.createElement("label")
+  likeBtn.classList.add("like")
+  likeBtn.innerHTML = `<input type="checkbox"><svg id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path></svg>`
+  likeBtn.style.height = "20px"
+
+  if (currBook.favorite == 'true') {likeBtn.style.fill = "#E3474F"}
+  else {likeBtn.style.fill = "#666"}
+
+  likeBtn.addEventListener("click", likeClicked)
+  cover.appendChild(likeBtn)
+
+  const deleteButton = document.createElement("button");
+  deleteButton.classList.add("deleteButton");
+  deleteButton.innerHTML = `
+    <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+      <path transform="translate(-2.5 -1.25)" d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z" id="Fill"></path>
+    </svg>`;
+  deleteButton.addEventListener("click", deleteButtonClick);
+  deleteButton.style.position = "relative";
+  deleteButton.style.left = "70%";
+  cover.appendChild(deleteButton);
+  
+
+  cover.addEventListener("mouseenter", bookCoverHover);
+  cover.addEventListener("mouseleave", bookCoverMouseOut);
+  cover.addEventListener("click", bookCoverClick);
+  book.appendChild(cover)
+
+
+  details = document.createElement("div")
+  details.classList.add("book-details")
+  details.style.flex = "1"; // Occupy remaining space
+  details.style.borderRadius = "5px"
+  details.style.display = "flex"; // Use flexbox for layout
+  details.style.alignItems = "center"; // Center items vertically
+  details.style.justifyContent = "space-between"; // Space between items
+
+  const title_author = document.createElement("div")
+  title_author.style.display = "flex"; // Use flexbox for layout
+  title_author.style.flexDirection = "column"; // Stack items vertically
+  title_author.style.flex = "1"; // Occupy remaining space
+
+  const title = document.createElement("p")
+  title.textContent = currBook.title
+  title.style.fontSize = "18px"
+  title.style.margin = "0"
+  title.style.cursor = "pointer"
+  title.addEventListener("click", editTitle)
+  title_author.appendChild(title)
+
+  const author = document.createElement("p")
+  author.textContent = currBook.author
+  author.style.color = "gray"
+  author.style.fontSize = "16px"
+  author.style.margin = "0"
+  author.style.cursor = "pointer"
+  author.addEventListener("click", editAuthor)
+
+  title_author.appendChild(author)
+
+  const length = document.createElement("div")
+  length.style.display = "flex"; // Use flexbox for layout
+  length.style.alignItems = "center"; // Center items vertically
+  length.style.fontSize = "14px"
+  length.style.margin = "0"
+
+  const lengthValue = document.createElement("span")
+  lengthValue.textContent = currBook.length
+  lengthValue.style.cursor = "pointer"
+  lengthValue.addEventListener("click", editLength)
+  length.appendChild(lengthValue)
+
+  const lengthType = document.createElement("span")
+  lengthType.textContent = " "+currBook.lengthType
+  lengthType.style.cursor = "pointer"
+  lengthType.addEventListener("click", editLengthType)
+  length.appendChild(lengthType)
+
+  title_author.appendChild(length)
+
+  const status = document.createElement("p")
+  status.style.fontSize = "14px"
+  status.style.margin = "0"
+  if (currBook.status === "Unread") {
+      status.textContent = "Unread"
+      status.style.color = "red"
+  }
+  else if (currBook.status === "Started") {
+      status.textContent = "Started"
+      status.style.color = "blue"
+  }
+  else {
+      status.textContent = "Completed"
+      status.style.color = "green"
+  }
+
+  status.style.cursor = "pointer"
+  status.addEventListener("click", statusChange)
+
+  title_author.appendChild(status)
+
+  details.appendChild(title_author)
+
+  const buttons = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  buttons.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+  buttons.setAttribute("viewBox", "0 0 24 24");
+  const titleElement = document.createElementNS("http://www.w3.org/2000/svg", "title");
+  titleElement.textContent = "dots-vertical";
+  buttons.appendChild(titleElement);
+
+  const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+  path.setAttribute("d", "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z");
+  buttons.appendChild(path);
+  buttons.style.cursor = "pointer"
+  buttons.style.height = "20px"
+  buttons.addEventListener("click", editButtonClick)
+  details.appendChild(buttons);
+
+  book.appendChild(details)
+  book.style.height = "100px"
+  book.style.marginBottom = "10px"; // Add some space between books
+  newmain.appendChild(book)
+
+
 
 }
 
@@ -394,20 +671,24 @@ coverDialog.addEventListener("input", () => {
 
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); // We don't want to submit this fake form
-  const coverDialogValue = document.querySelector(".dialog>div");
-  const titleDialog = document.querySelector("input#title").value;
-  const authorDialog = document.querySelector("input#author").value;
-  const lengthDialog = document.querySelector("#length").value;
-  const lengthTypeDialog = document.querySelector('input[name="length"]:checked').value;
-  const readStatusDialog = document.querySelector("select").value;
-  const synopsisDialog = document.querySelector("#synopsis").value
-  const favoriteDialog = document.querySelector(".like input[type='checkbox']").checked.toString()
-  const reviewDialog = document.querySelector("#review").value
-  const ratingDialog = document.querySelector("#rating").value
+  let coverDialogValue = document.querySelector(".dialog>div");
+  let titleDialog = document.querySelector("input#title").value;
+  let authorDialog = document.querySelector("input#author").value;
+  let lengthDialog = document.querySelector("#length").value;
+  let lengthTypeDialog = document.querySelector('input[name="length"]:checked').value;
+  let readStatusDialog = document.querySelector("select").value;
+  let synopsisDialog = document.querySelector("#synopsis").value
+  if (synopsisDialog == "Write a summary...") {synopsisDialog = ""}
+  let favoriteDialog = document.querySelector(".like input[type='checkbox']").checked.toString()
+  let reviewDialog = document.querySelector("#review").value
+  if (reviewDialog == "Write a Review...") {reviewDialog = ""}
+  let ratingDialog = document.querySelector("#rating").value
+  if (ratingDialog == "default") {ratingDialog = ""}
   let newBookName = titleDialog;
-  newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value, synopsisDialog, favoriteDialog, favoriteDialog, reviewDialog, ratingDialog);
+  main.innerHTML = "";
+  newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value, synopsisDialog, favoriteDialog, reviewDialog, ratingDialog);
   myLibrary.push(newBookName);
-  myLibrary.forEach(book => {displayBooks(book)})
+  myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
   dialog.close(); // Have to send the select box value here.
   main.classList.remove("dialog-open"); // Remove class to resize container back
   document.querySelector("form").reset(); // Reset the form
@@ -509,9 +790,13 @@ function editAuthor(event) {
       newAuthorElement.style.wordBreak = "break-word";
       textarea.replaceWith(newAuthorElement)
       newAuthorElement.addEventListener("click", editAuthor);
+      newAuthorElement.style.color = "gray";
+      if (viewType == "compact") {authorElement.style.font = "gray"}
+      else {newAuthorElement.style.fontSize = "16px";}
     } else {
       // If the new author is empty, revert to the original author
       textarea.replaceWith(authorElement)
+      if (viewType == "compact") {authorElement.style.font = "gray"}
       authorElement.addEventListener("click", editAuthor);
     }
   });
@@ -546,9 +831,13 @@ function editTitle(event) {
       newTitleElement.style.wordBreak = "break-word";
       textarea.replaceWith(newTitleElement)
       newTitleElement.addEventListener("click", editTitle);
+      if (viewType == "compact") {newTitleElement.style.fontSize = "10px"}
+      else {newTitleElement.style.fontSize = "18px";}
     } else {
       // If the new title is empty, revert to the original title
       textarea.replaceWith(titleElement)
+      if (viewType == "compact") {titleElement.style.font = "gray"}
+      else {titleElement.style.fontSize = "18px";}
       titleElement.addEventListener("click", editTitle);
     }
   });
@@ -590,9 +879,13 @@ function editLength(event) {
       newLengthElement.style.width = "min-content"
       newLengthElement.addEventListener("click", editLength); // Reattach the click event listener
       textarea.replaceWith(newLengthElement);
+      if (viewType == "compact") {newLengthElement.style.fontSize = "10px"}
+      else {newLengthElement.style.fontSize = "14px";}
     } else {
       // If the new length is empty, revert to the original length
       textarea.replaceWith(lengthElement);
+      if (viewType == "compact") {lengthElement.style.fontSize = "10px"}
+      else {lengthElement.style.fontSize = "14px";}
       lengthElement.addEventListener("click", editLength);
     }
   });
@@ -634,9 +927,13 @@ function editLengthType(event) {
       newLengthTypeElement.style.wordBreak = "break-word";
       newLengthTypeElement.addEventListener("click", editLengthType); // Reattach the click event listener
       select.replaceWith(newLengthTypeElement);
+      if (viewType == "compact") {newLengthTypeElement.style.fontSize = "10px"}
+      else {newLengthTypeElement.style.fontSize = "14px";}
     } else {
       // If the new length type is empty, revert to the original length type
       select.replaceWith(lengthTypeElement);
+      if (viewType == "compact") {lengthTypeElement.style.fontSize = "10px"}
+      else {lengthTypeElement.style.fontSize = "14px";}
       lengthTypeElement.addEventListener("click", editLengthType);
     }
   });
@@ -662,6 +959,8 @@ function statusChange(event) {
   }
 
   book.status = event.target.textContent;
+  if (viewType == "compact") {event.target.style.fontSize = "10px"}
+  else {event.target.style.fontSize = "14px";}
   statusSelector.appendChild(event.target);
 
 
@@ -672,17 +971,268 @@ function likeClicked(event) {
   const likeToChange = bookLiked.querySelector("div>p:nth-child(1)").textContent;
   const likeButton = bookLiked.querySelector(".like > svg")
   const book = myLibrary.find(book => book.title === likeToChange);
-  if (book.favorite == '') {
+  if (book.favorite == "") {
     book.favorite = 'true'
     likeButton.style.fill = "#E3474F"
   }
   else {
-    book.favorite = ''
+    book.favorite = ""
     likeButton.style.fill = "#666"
   }
   console.log(book)
 }
 
+function bookCoverClick(event) {
+  if (event.target.closest('.deleteButton') || event.target.closest('.like')) {
+    return; // Exit the function if the like or delete buttons are clicked
+  }
+  bookInfoDialog = document.querySelector(".bookInfo")
+  bookInfo = event.target.closest(".book")
+  bookInfoTitle = bookInfo.querySelector(".book-details > div > p:nth-child(1)").textContent
+  const book = myLibrary.find(book => book.title === bookInfoTitle);
+  bookInfoDialog.style.fontSize = "12px"
+  bookInfoDialog.style.display = "grid"
+  bookInfoDialog.style.gridTemplateColumns = "1fr 2fr"
+  bookInfoDialog.style.gridTemplateRows = "1fr 2fr"
+  bookInfoDialog.style.gridGap = "10px"
+  bookInfoDialogCover = document.querySelector(".dialog-cover")
+  bookInfoDialogCover.style.backgroundImage = `url(${book.cover})`
+  bookInfoDialogCover.style.height = "100%"
+  bookInfoDialogCover.style.aspectRatio = "2/3"
+  bookInfoDialogCover.style.backgroundSize = "cover"
+  bookInfoDialogCover.style.gridRow = "1 / 2"
+  bookInfoDialogCover.style.gridColumn = "1 / 2"
+  bookInfoDialog.appendChild(bookInfoDialogCover)
 
-myLibrary.forEach(book => {displayBooks(book)})
+  bookInfoDialogDetails = document.querySelector(".dialog-info")
+  bookInfoDialogDetails.style.display = "flex"
+  bookInfoDialogDetails.style.flexDirection = "column"
+  bookInfoTitleDialog = document.querySelector(".dialog-title")
+  bookInfoTitleDialog.textContent = book.title
+  bookInfoTitleDialog.style.fontSize = "20px"
+  bookInfoDialogDetails.appendChild(bookInfoTitleDialog)
+  bookInfoAuthorDialog = document.querySelector(".dialog-author")
+  bookInfoAuthorDialog.textContent = book.author
+  bookInfoAuthorDialog.style.color = "gray"
+  bookInfoAuthorDialog.style.fontSize = "16px"
+  bookInfoDialogDetails.appendChild(bookInfoAuthorDialog)
+  bookInfoLengthDialog = document.querySelector(".dialog-length")
+  bookInfoLengthDialog.textContent = book.length + " " + book.lengthType
+  bookInfoDialogDetails.appendChild(bookInfoLengthDialog)
+  bookInfoStatusDialog = document.querySelector(".dialog-status")
+  bookInfoStatusDialog.textContent = book.status
+  bookInfoDialogDetails.appendChild(bookInfoStatusDialog)
+  const bookInfoRatingContainer = document.querySelector(".dialog-rating-container");
+  bookInfoRatingContainer.style.display = "flex";
+  bookInfoRatingContainer.style.alignItems = "center";
+  const bookInfoRatingDialog = document.querySelector(".dialog-rating");
+  if (book.rating === "") {bookInfoRatingDialog.textContent = "-/10"}
+  else {bookInfoRatingDialog.textContent = book.rating + "/10"}
+  bookInfoRatingDialog.style.marginRight = "5px";
+  const svg = document.querySelector(".dialog-rating-container > svg");
+  svg.style.fill = "gold";
+  svg.style.height = "14px";
+  bookInfoRatingContainer.appendChild(bookInfoRatingDialog);
+  bookInfoRatingContainer.appendChild(svg);
+  bookInfoDialogDetails.appendChild(bookInfoRatingContainer);
+
+  const bookInfoFavoriteContainer = document.querySelector(".dialog-favorite-container");
+  bookInfoFavoriteContainer.style.display = "flex";
+  bookInfoFavoriteContainer.style.alignItems = "center";
+
+  // Clear the container before appending new elements
+  bookInfoFavoriteContainer.innerHTML = '';
+
+  if (book.favorite === 'true') {
+    const bookInfoFavoriteDialog = document.createElement("label");
+    bookInfoFavoriteDialog.className = "dialog-favorite";
+    bookInfoFavoriteDialog.textContent = "Remove from Favorites";
+    bookInfoFavoriteContainer.appendChild(bookInfoFavoriteDialog);
+
+    const dialogFavoriteSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    dialogFavoriteSvg.setAttribute("viewBox", "0 0 24 24");
+    dialogFavoriteSvg.style.fill = "#E3474F";
+    dialogFavoriteSvg.style.height = "18px";
+    dialogFavoriteSvg.style.marginLeft = "5px";
+    dialogFavoriteSvg.innerHTML = '<path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path>';
+    dialogFavoriteSvg.addEventListener("click", dialogLikeClicked);
+    bookInfoFavoriteContainer.appendChild(dialogFavoriteSvg);
+  } else if (book.favorite === '') {
+    const bookInfoFavoriteDialog = document.createElement("label");
+    bookInfoFavoriteDialog.className = "dialog-favorite";
+    bookInfoFavoriteDialog.textContent = "Add to Favorites";
+    bookInfoFavoriteContainer.appendChild(bookInfoFavoriteDialog);
+
+    const dialogFavoriteSvg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    dialogFavoriteSvg.setAttribute("viewBox", "0 0 24 24");
+    dialogFavoriteSvg.style.fill = "#666";
+    dialogFavoriteSvg.style.height = "18px";
+    dialogFavoriteSvg.style.marginLeft = "5px";
+    dialogFavoriteSvg.innerHTML = '<path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path>';
+    dialogFavoriteSvg.addEventListener("click", dialogLikeClicked);
+    bookInfoFavoriteContainer.appendChild(dialogFavoriteSvg);
+
+  }
+
+  bookInfoDialogDetails.appendChild(bookInfoFavoriteContainer);
+  console.log(book.favorite);
+
+  
+  const dialogSynopsisAndReviewContainer = document.querySelector(".synopsis-and-review")
+  dialogSynopsisAndReviewContainer.style.gridColumn = "span 2"
+  dialogSynopsisAndReviewContainer.style.display = "flex"
+  dialogSynopsisAndReviewContainer.style.flexDirection = "column"
+  const bookInfoSynopsis = document.querySelector(".dialog-synopsis")
+  if (book.synopsis === "") {bookInfoSynopsis.innerHTML = "<span style='color: gray; font-Size: 16px'>Synopsis</span><br>Add a synopsis"}
+  else {bookInfoSynopsis.innerHTML = "<span style='color: gray; font-Size: 16px'>Synopsis</span><br>" + book.synopsis}
+  dialogSynopsisAndReviewContainer.appendChild(bookInfoSynopsis)
+  const bookInfoReview = document.querySelector(".dialog-review")
+  if (book.review === "") {bookInfoReview.innerHTML = "<span style='color: gray; font-Size: 16px'>Review</span><br>Add a review"}
+  else {bookInfoReview.innerHTML = "<span style='color: gray; font-Size: 16px'>Review</span><br>" + book.review}
+  dialogSynopsisAndReviewContainer.appendChild(bookInfoReview)
+  bookInfoDialog.appendChild(dialogSynopsisAndReviewContainer)
+
+  bookInfoDialog.style.width = "clamp(350px, 50vw, 600px)"
+  bookInfoDialog.style.maxHeight = "90vh"
+  bookInfoDialog.style.position = "fixed"
+  bookInfoDialog.style.top = "50%"
+  bookInfoDialog.style.left = "50%"
+  bookInfoDialog.style.transform = "translate(-50%, -50%)"
+  bookInfoDialog.style.overflow = "auto"; // Enables scrolling
+  bookInfoDialog.style.scrollbarWidth = "none"; // Hides scrollbar in Firefox
+  bookInfoDialog.style.msOverflowStyle = "none"; // Hides scrollbar in IE/Edge
+  bookInfoDialog.style.borderRadius = "5px"
+
+  bookInfoDialog.showModal();
+
+  closeButtonDialog = document.querySelector("#bookInfoDialogcloseButton")
+  closeButtonDialog.style.focus = "none"
+  closeButtonDialog.style.outline = "none"
+  closeButtonDialog.addEventListener("click", () => {bookInfoDialog.close(); bookInfoDialog.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})})
+
+}
+
+function dialogLikeClicked(event) {
+  const likeStatusChanged = event.target.closest(".dialog-info");
+  const likeToChange = likeStatusChanged.querySelector(".dialog-title").textContent;
+  const book = myLibrary.find(book => book.title === likeToChange);
+
+  const likeButton = event.target; // The SVG element that was clicked
+
+  if (book.favorite === '') {
+    book.favorite = 'true';
+    likeButton.style.fill = "#E3474F";
+  } else {
+    book.favorite = '';
+    likeButton.style.fill = "#666";
+  }
+
+  console.log(book);
+}
+// function bookCoverClick(event) {
+//   bookInfoDialog = document.querySelector(".bookInfo")
+//   bookInfo = event.target.closest(".book")
+//   bookInfoTitle = bookInfo.querySelector(".book-details > div > p:nth-child(1)").textContent
+//   const book = myLibrary.find(book => book.title === bookInfoTitle);
+//   bookInfoDialog.style.fontSize = "12px"
+//   bookInfoDialog.style.display = "grid"
+//   bookInfoDialog.style.gridTemplateColumns = "1fr 2fr"
+//   bookInfoDialog.style.gridTemplateRows = "1fr 2fr"
+//   bookInfoDialog.style.gridGap = "10px"
+//   bookInfoDialogCover = document.createElement("div")
+//   bookInfoDialogCover.style.gridRow = "span 1"
+//   bookInfoDialogCover.style.gridColumn = "span 1"
+//   bookInfoDialogCover.style.backgroundImage = `url(${book.cover})`
+//   bookInfoDialogCover.style.height = "100%"
+//   bookInfoDialogCover.style.aspectRatio = "2/3"
+//   bookInfoDialogCover.style.backgroundSize = "cover"
+//   bookInfoDialog.appendChild(bookInfoDialogCover)
+
+//   bookInfoDialogDetails = document.createElement("div")
+//   bookInfoDialogDetails.style.gridRow = "span 1"
+//   bookInfoDialogDetails.style.gridColumn = "span 1"
+//   bookInfoDialogDetails.style.display = "flex"
+//   bookInfoDialogDetails.style.flexDirection = "column"
+//   bookInfoTitleDialog = document.createElement("p")
+//   bookInfoTitleDialog.textContent = book.title
+//   bookInfoTitleDialog.style.fontSize = "20px"
+//   bookInfoDialogDetails.appendChild(bookInfoTitleDialog)
+//   bookInfoAuthorDialog = document.createElement("p")
+//   bookInfoAuthorDialog.textContent = book.author
+//   bookInfoAuthorDialog.style.color = "gray"
+//   bookInfoAuthorDialog.style.fontSize = "16px"
+//   bookInfoDialogDetails.appendChild(bookInfoAuthorDialog)
+//   bookInfoLengthDialog = document.createElement("p")
+//   bookInfoLengthDialog.textContent = book.length + " " + book.lengthType
+//   bookInfoDialogDetails.appendChild(bookInfoLengthDialog)
+//   bookInfoStatusDialog = document.createElement("p")
+//   bookInfoStatusDialog.textContent = book.status
+//   bookInfoDialogDetails.appendChild(bookInfoStatusDialog)
+//   const bookInfoRatingContainer = document.createElement("div");
+//   bookInfoRatingContainer.style.display = "flex";
+//   bookInfoRatingContainer.style.alignItems = "center";
+  
+//   const bookInfoRatingDialog = document.createElement("p");
+//   bookInfoRatingDialog.textContent = book.rating + "/10";
+//   bookInfoRatingDialog.style.marginRight = "5px";
+  
+//   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+//   svg.setAttribute("height", "24px");
+//   svg.setAttribute("id", "Layer_1");
+//   svg.setAttribute("version", "1.2");
+//   svg.setAttribute("viewBox", "0 0 24 24");
+//   svg.setAttribute("width", "24px");
+//   svg.setAttribute("xml:space", "preserve");
+//   svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+//   svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
+//   svg.style.fill = "gold";
+  
+//   const g1 = document.createElementNS("http://www.w3.org/2000/svg", "g");
+//   const g2 = document.createElementNS("http://www.w3.org/2000/svg", "g");
+//   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+//   path.setAttribute("d", "M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z");
+  
+//   g2.appendChild(path);
+//   g1.appendChild(g2);
+//   svg.appendChild(g1);
+  
+//   bookInfoRatingContainer.appendChild(bookInfoRatingDialog);
+//   bookInfoRatingContainer.appendChild(svg);
+//   bookInfoDialogDetails.appendChild(bookInfoRatingContainer);
+//   bookInfoDialog.appendChild(bookInfoDialogDetails)
+
+//   bookInfoDialogSynopsisAndReview = document.createElement("div")
+//   bookInfoDialogSynopsisAndReview.style.gridColumn = "span 2"
+//   bookInfoDialogSynopsisAndReview.style.gridRow = "span 1"
+//   bookInfoDialogSynopsisAndReview.style.display = "flex"
+//   bookInfoDialogSynopsisAndReview.style.flexDirection = "column"
+//   bookInfoSynopsisDialog = document.createElement("p")
+//   bookInfoSynopsisDialog.innerHTML = "<span style='color: gray; font-Size: 16px'>Synopsis</span><br>" + book.synopsis
+//   bookInfoDialogSynopsisAndReview.appendChild(bookInfoSynopsisDialog)
+//   bookInfoReviewDialog = document.createElement("p")
+//   bookInfoReviewDialog.innerHTML = "<span style='color: gray; font-Size: 16px'>Review</span><br>" + book.review
+//   bookInfoDialogSynopsisAndReview.appendChild(bookInfoReviewDialog)
+//   bookInfoDialog.style.width = "clamp(350px, 50vw, 600px)"
+//   bookInfoDialog.style.maxHeight = "90vh"
+//   bookInfoDialog.style.position = "fixed"
+//   bookInfoDialog.style.top = "50%"
+//   bookInfoDialog.style.left = "50%"
+//   bookInfoDialog.style.transform = "translate(-50%, -50%)"
+//   bookInfoDialog.style.overflow = "auto"; // Enables scrolling
+//   bookInfoDialog.style.scrollbarWidth = "none"; // Hides scrollbar in Firefox
+//   bookInfoDialog.style.msOverflowStyle = "none"; // Hides scrollbar in IE/Edge
+
+//   bookInfoDialog.appendChild(bookInfoDialogSynopsisAndReview)
+  
+//   bookInfoDialog.showModal();
+
+//   closeBookInfo = document.querySelector(".bookInfo > .closeButton")  
+//   closeBookInfo.addEventListener("click", () => {
+//     bookInfoDialog.close();
+//   })
+
+
+// }
+
+myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {displayBooks(book); listView(book)}})
 

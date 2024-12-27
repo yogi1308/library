@@ -80,7 +80,7 @@
   .main.dialog.close {
     margin-left: 0px;
   }
-
+  
   .dialog::backdrop {
     backdrop-filter: blur(2px);
   }
@@ -226,6 +226,10 @@
     border-radius: 5px;
   }
 
+  .book-cover:hover {
+    cursor: pointer;
+  }
+
   .book-details {
     border: 2px solid blue;
     grid-row: span 1;
@@ -368,11 +372,6 @@
 .header > p:hover {
   cursor: pointer
 }
-
-
-
-
-
 
 
 

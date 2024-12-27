@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <dialog class="dialog">
+    <dialog class="dialog"> 
         <div></div>
         <form>
             <div class="cover-title-author">
@@ -49,7 +49,8 @@
             <textarea rows="10" cols="32" id="review">Write a Review...</textarea>
             <div class="rate">
                 <label for="rating">Rate this book: </label>
-                <select name="status" required aria-placeholder="/10">
+                <select name="status" required aria-placeholder="/10" id="rating">
+                    <option value="default" selected disabled hidden>-</option>
                     <option value="0">0</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -61,7 +62,6 @@
                     <option value="8">8</option>
                     <option value="9">9</option>
                     <option value="10">10</option>
-                    <p>/10</p>
                 </select>
                 <p>/10</p>
             </div>
@@ -130,5 +130,36 @@
                 </div>
             </div>
         </div>
+        <dialog class="bookInfo">
+            <button class="closeButton" value="cancel" formmethod="dialog" id="bookInfoDialogcloseButton">
+                <span class="X"></span>
+                <span class="Y"></span>
+                <div class="close">Close</div>
+            </button>
+            <div class="cover-and-info">
+                <div class="dialog-cover"></div>
+                <div class="dialog-info">
+                    <p class="dialog-title"></p>
+                    <p class="dialog-author"></p>
+                    <p class="dialog-length"></p>
+                    <p class="dialog-status"></p>
+                    <div class="dialog-favorite-container">
+                        <p class="dialog-favorite"></p>
+                        <label class="like">
+                            <input type="checkbox">
+                            <svg id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path></svg>
+                        </label>
+                    </div>
+                    <div class="dialog-rating-container">
+                        <p class="dialog-rating"></p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+                    </div>
+                </div>
+            </div>
+            <div class="synopsis-and-review">
+                <p class="dialog-synopsis"></p>
+                <p class="dialog-review"></p>
+            </div>
+        </dialog>
 </body>
 </html>
