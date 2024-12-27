@@ -105,18 +105,24 @@ function sortBooks(event) {
 
   list.addEventListener("click", (event) => {
     if (event.target.textContent === "By Title") {
-      myLibrary.sort((a, b) => a.title.localeCompare(b.title))
+      const titleSortArray = [...myLibrary].sort((a, b) => a.title.localeCompare(b.title));
       main.innerHTML = "";
-      myLibrary.forEach(book => {displayBooks(book)})
+      titleSortArray.forEach(book => {displayBooks(book)})
       console.log(myLibrary)
     }
     else if (event.target.textContent === "By Author Name") {
-      myLibrary.sort((a, b) => a.author.localeCompare(b.author))
+      AuthorSortArray = [...myLibrary].sort((a, b) => a.author.localeCompare(b.author));
       main.innerHTML = "";
+      AuthorSortArray.forEach(book => {displayBooks(book)})
+    }
+    else if (event.target.textContent === "Date Added") {
+      main.innerHTML = ""
       myLibrary.forEach(book => {displayBooks(book)})
     }
-    else if (event.target.textContent === "By Date Added") {
-      myLibrary.forEach(book => {displayBooks(book)})
+    else if (event.target.textContent === "Favorites") {
+      favoriteSort = [...myLibrary].filter(book => book.favorite === 'true')
+      main.innerHTML = ""
+      favoriteSort.forEach(book => {displayBooks(book)})
     }
     else if (event.target.textContent === "By Reading Status •") {
       const statusList = document.querySelector(".header > div:nth-child(3) > ol > div > ol")
