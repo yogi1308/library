@@ -34,19 +34,37 @@
                     <option value="Started">Started</option>
                   </select>
             </div>
-            <div>
-                <textarea rows="10" cols="32" id="synopsis">Summary</textarea>
-
-            </div>
             <label class="like">
                 <input type="checkbox">Add to Favorites
                 <svg id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path></svg>
             </label>
+            <div>
+                <textarea rows="10" cols="32" id="synopsis">Write a summary...</textarea>
+            </div>
             <button class="closeButton" value="cancel" formmethod="dialog">
                 <span class="X"></span>
                 <span class="Y"></span>
                 <div class="close">Close</div>
             </button>
+            <textarea rows="10" cols="32" id="review">Write a Review...</textarea>
+            <div class="rate">
+                <label for="rating">Rate this book: </label>
+                <select name="status" required aria-placeholder="/10">
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <p>/10</p>
+                </select>
+                <p>/10</p>
+            </div>
             <button id="confirmBtn" value="default">Confirm</button>
         </form>
     </dialog>

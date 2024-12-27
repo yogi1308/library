@@ -402,8 +402,10 @@ confirmBtn.addEventListener("click", (event) => {
   const readStatusDialog = document.querySelector("select").value;
   const synopsisDialog = document.querySelector("#synopsis").value
   const favoriteDialog = document.querySelector(".like input[type='checkbox']").checked.toString()
+  const reviewDialog = document.querySelector("#review").value
+  const ratingDialog = document.querySelector("#rating").value
   let newBookName = titleDialog;
-  newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value, synopsisDialog, favoriteDialog, favoriteDialog);
+  newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value, synopsisDialog, favoriteDialog, favoriteDialog, reviewDialog, ratingDialog);
   myLibrary.push(newBookName);
   myLibrary.forEach(book => {displayBooks(book)})
   dialog.close(); // Have to send the select box value here.
