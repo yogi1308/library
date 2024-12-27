@@ -361,6 +361,10 @@
   opacity: 1;
 }
 
+.header > p:hover {
+  cursor: pointer
+}
+
 
 
 

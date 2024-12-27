@@ -66,6 +66,9 @@ search.addEventListener("click", searchBooks)
 const searchBar = document.querySelector("#search-input")
 searchBar.addEventListener("input", searchBooks)
 
+const library = document.querySelector(".header > p")
+library.addEventListener("click", () => {main.innerHTML = ""; myLibrary.forEach(book => displayBooks(book))})
+
 function searchBooks(event) {
   const searchContainer = document.querySelector(".search-container")
   if (searchContainer.style.display == "flex") {searchContainer.style.display = "none"}
