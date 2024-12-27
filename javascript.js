@@ -118,10 +118,10 @@ function sortBooks(event) {
     else if (event.target.textContent === "By Date Added") {
       myLibrary.forEach(book => {displayBooks(book)})
     }
-    else if (event.target.textContent === "By Reading Status") {
+    else if (event.target.textContent === "By Reading Status •") {
       const statusList = document.querySelector(".header > div:nth-child(3) > ol > div > ol")
       statusList.style.display = "block"
-      statusList.addEventListener("mouseenter", (event) => {statusList.style.display = "block"; sortByStatus(event)})
+      statusList.addEventListener("mouseenter", (event) => {statusList.style.display = "block";sortByStatus(event)})
       statusList.addEventListener("mouseleave", (event) => {statusList.style.display = "none"})
     }
   })
@@ -388,8 +388,10 @@ confirmBtn.addEventListener("click", (event) => {
   const lengthDialog = document.querySelector("#length").value;
   const lengthTypeDialog = document.querySelector('input[name="length"]:checked').value;
   const readStatusDialog = document.querySelector("select").value;
+  const synopsisDialog = document.querySelector("#synopsis").value
+  const favoriteDialog = document.querySelector(".like input[type='checkbox']").checked.toString()
   let newBookName = titleDialog;
-  newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value);
+  newBookName= new Book(titleDialog, authorDialog, readStatusDialog, lengthDialog, lengthTypeDialog, coverDialog.value, synopsisDialog, favoriteDialog, favoriteDialog);
   myLibrary.push(newBookName);
   myLibrary.forEach(book => {displayBooks(book)})
   dialog.close(); // Have to send the select box value here.

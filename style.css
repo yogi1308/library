@@ -172,6 +172,10 @@
     padding: 0 10px;
   }
 
+  ol:hover, .search, .sort, .vertical-dots {
+    cursor: pointer;
+  }
+
   li {
     border-bottom: 1px solid black;
   }
@@ -374,13 +378,26 @@
   width: 0;
 }
 
-.like {
+.book-cover > .like {
   display: block;
   position: absolute;
   top: 0;
   cursor: pointer;
   user-select: none;
   z-index: 3;
+}
+
+body > dialog > form > label{
+  display: flex;
+  align-items: center;
+}
+
+body > dialog > form > label #Layer_1 {
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  z-index: 3;
+  margin-left: 10px;
 }
 
 .like svg {
