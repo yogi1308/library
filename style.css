@@ -399,6 +399,11 @@
   cursor: pointer
 }
 
+.edit {
+  display: none;
+  background: white;
+}
+
 
 
 
@@ -455,6 +460,14 @@ body > div.container > div.header > div:nth-child(3) {
   width: 110px;
 }
 
+
+.like input:checked ~ svg {
+  fill: #E3474F;
+}
+
+body > div.container > div.header > div:nth-child(3) {
+  width: 110px;
+}
 
 
 
@@ -547,4 +560,77 @@ body > div.container > div.header > div:nth-child(3) {
   .plusButton:focus-visible>.plusIcon {
     fill: black;
     transform: rotate(180deg);
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  body.dark-theme {
+    background: #323232;
+    color: white;
+  }
+
+  .book-details.dark-theme {
+    background: #1f1f1f;  
+  }
+
+  svg.dark-theme {
+    fill: white;
+  }
+
+  svg.icon.dark-theme {
+    fill: black;
+  }
+
+  .list.dark-theme {
+    background:rgba(0, 0, 0, 0.5)
+  }
+
+  dialog.dark-theme, input.dark-theme, textarea.dark-theme, select.dark-theme, #confirmBtn.dark-theme, .edit.dark-theme {
+    background: #1f1f1f;
+    color: white;
+  }
+
+  .like.liked > svg {
+  fill: #E3474F; /* Or any other style to indicate it's liked */
   }

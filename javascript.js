@@ -52,8 +52,13 @@ function Book(title, author, status, length, lengthType, cover, synopsis, favori
 
 console.log(myLibrary)
 
+const theme = document.querySelector(".material-symbols-outlined")
+theme.addEventListener("click", changeTheme)
+theme.style.cursor = "pointer"
+
 const verticalDots = document.querySelector(".vertical-dots")
 verticalDots.addEventListener("click", displayType)
+verticalDots.style.cursor = "pointer"
 
 const sort = document.querySelector(".sort")
 sort.addEventListener("click", sortBooks)
@@ -93,6 +98,7 @@ function searchBooks(event) {
     main.appendChild(noResults)
   }
   searchedArray.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
+  addDarkClass()
 }
 
 function sortBooks(event) {
@@ -348,6 +354,8 @@ function displayBooks(currBook) {
 
     
     const buttons = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    buttons.classList.add("three-vertical-dots");
+    buttons.style.cursor = "pointer";
     buttons.setAttribute("xmlns", "http://www.w3.org/2000/svg");
     buttons.setAttribute("viewBox", "0 0 24 24");
     const titleElement = document.createElementNS("http://www.w3.org/2000/svg", "title");
@@ -364,6 +372,7 @@ function displayBooks(currBook) {
     details.appendChild(buttons);
     
     main.appendChild(book)
+    addDarkClass()
 
 }
 
@@ -486,6 +495,8 @@ function displayCompactBooks(currBook) {
   buttons.setAttribute("viewBox", "0 0 24 24");
   const titleElement = document.createElementNS("http://www.w3.org/2000/svg", "title");
   titleElement.textContent = "dots-vertical";
+  buttons.classList.add("three-vertical-dots");
+  buttons.style.cursor = "pointer";
   buttons.appendChild(titleElement);
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -495,7 +506,7 @@ function displayCompactBooks(currBook) {
   details.appendChild(buttons);
   
   main.appendChild(book)
-
+  addDarkClass()
 }
 
 function listView(currBook) {
@@ -520,8 +531,13 @@ function listView(currBook) {
   likeBtn.innerHTML = `<input type="checkbox"><svg id="Layer_1" version="1.0" viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M16.4,4C14.6,4,13,4.9,12,6.3C11,4.9,9.4,4,7.6,4C4.5,4,2,6.5,2,9.6C2,14,12,22,12,22s10-8,10-12.4C22,6.5,19.5,4,16.4,4z"></path></svg>`
   likeBtn.style.height = "20px"
 
-  if (currBook.favorite == 'true') {likeBtn.style.fill = "#E3474F"}
-  else {likeBtn.style.fill = "#666"}
+  if (currBook.favorite) {
+    likeBtn.classList.add("liked"); // Add a class to indicate it's liked
+  }
+  likeBtn.addEventListener("click", () => {
+    currBook.favorite = !currBook.favorite;
+    likeBtn.classList.toggle("liked");
+  });
 
   likeBtn.addEventListener("click", likeClicked)
   cover.appendChild(likeBtn)
@@ -588,7 +604,7 @@ function listView(currBook) {
   length.appendChild(lengthValue)
 
   const lengthType = document.createElement("span")
-  lengthType.textContent = " "+currBook.lengthType
+  lengthType.textContent = " " + currBook.lengthType
   lengthType.style.cursor = "pointer"
   lengthType.addEventListener("click", editLengthType)
   length.appendChild(lengthType)
@@ -623,6 +639,8 @@ function listView(currBook) {
   buttons.setAttribute("viewBox", "0 0 24 24");
   const titleElement = document.createElementNS("http://www.w3.org/2000/svg", "title");
   titleElement.textContent = "dots-vertical";
+  buttons.classList.add("three-vertical-dots");
+    buttons.style.cursor = "pointer";
   buttons.appendChild(titleElement);
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
@@ -630,6 +648,8 @@ function listView(currBook) {
   buttons.appendChild(path);
   buttons.style.cursor = "pointer"
   buttons.style.height = "20px"
+  buttons.style.marginTop = "5px"
+  buttons.style.alignSelf = "flex-start"
   buttons.addEventListener("click", editButtonClick)
   details.appendChild(buttons);
 
@@ -637,8 +657,7 @@ function listView(currBook) {
   book.style.height = "100px"
   book.style.marginBottom = "10px"; // Add some space between books
   newmain.appendChild(book)
-
-
+  addDarkClass()
 
 }
 
@@ -701,7 +720,16 @@ confirmBtn.addEventListener("click", (event) => {
 });
 
 function editButtonClick(event) {
-
+  const bookWhoseEditButtonWasClicked = event.target.closest(".book");
+  const editButton = bookWhoseEditButtonWasClicked.querySelector(".three-vertical-dots");
+  editButton.style.postiton = "relative";
+  const editList = document.querySelector(".edit")
+  editList.style.position = "absolute";
+  editList.style.top = `${event.clientY}px`;
+  editList.style.left = `${event.clientX}px`;
+  if (editList.style.display == "block") {editList.style.display = "none"; console.log("none")}
+  else if (editList.style.display == "none" || editList.style.display == "") {editList.style.display = "block"; console.log("block")}
+  console.log(event.target.closest(".book").querySelector(".book-details > div > p:nth-child(1)").textContent)
 }
 
 function bookCoverHover(event) {
@@ -1234,6 +1262,40 @@ function dialogLikeClicked(event) {
 
 
 // }
+
+function addDarkClass() {
+  if (document.querySelector('body').classList.contains("dark-theme")) {
+    document.querySelectorAll('.book-details').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('svg').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('svg.icon').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('list').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('dialog').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('input').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('textarea').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('select').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelector('#confirmBtn').classList.add('dark-theme');
+    document.querySelector('.edit').classList.add('dark-theme');
+  }
+}
+
+function changeTheme(event) {
+  document.body.classList.toggle('dark-theme');
+  document.querySelectorAll('.book-details').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('svg').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('svg.icon').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('list').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('dialog').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('input').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('textarea').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('select').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelector('#confirmBtn').classList.toggle('dark-theme');
+  document.querySelector('.edit').classList.toggle('dark-theme');
+  console.log("Theme changed");
+}
+
+ 
+
+
 
 myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {displayBooks(book); listView(book)}})
 
