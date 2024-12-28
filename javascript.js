@@ -822,7 +822,25 @@ function editReview(event) {
 }
 
 function editSynopsis(event) {
-
+  book = event.target.closest(".book")
+  bookTitle = book.querySelector(".book-details > div > p:nth-child(1)").textContent
+  book = myLibrary.find(book => book.title === bookTitle)
+  changeSynopsis = document.querySelector(".edit-synopsis")
+  changeSynopsis.showModal();
+  changeSynopsis.style.position = "fixed";
+  changeSynopsis.style.top = "5%";
+  changeSynopsis.style.left = "25%";
+  changeSynopsis.style.fontSize = "16px";
+  changeSynopsis.style.width = "50vw";
+  changeSynopsis.style.display = "flex";
+  changeSynopsis.style.flexDirection = "column";
+  changeSynopsis.style.gap = "10px";
+  synopsis = document.querySelector("#editSynopsis")
+  synopsis.value = book.synopsis
+  closeChangeSynopsis = document.querySelector("#closeEditSynopsis")
+  closeChangeSynopsis.addEventListener("click", () => {changeSynopsis.close();changeSynopsis.style.display = "none";})
+  confirmChangeSynopsis = document.querySelector("#edit-synopsis-confirm")
+  confirmChangeSynopsis.addEventListener("click", () =>{book.synopsis = synopsis.value; synopsis.value = ""; changeSynopsis.close();changeSynopsis.style.display = "none";})
 }
 
 function changeRating(event) {

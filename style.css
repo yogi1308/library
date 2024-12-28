@@ -269,7 +269,7 @@
     grid-column: span 1;
   }
 
-  .change-book-cover, #editReview {
+  .change-book-cover, #editReview, #editSynopsis {
     scrollbar-width: none;
   }
 
