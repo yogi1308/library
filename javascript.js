@@ -2,8 +2,6 @@
 // clicking on the dots will enable you to add a genre and a summary, a review, and a rating, and favorite
 // add a dark mode
 // make the sort button work in ascending and descending order
-//clicking on the book cover will open a dialog with all the information about the book
-// add feature to make it into compact grid view, list view, and detailed view
 
 Vagabond = new Book('Vagabond', 'Takehiko Inoue', 'Completed', 327, 'Chapters', 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421577449/vagabond-vol-37-9781421577449_hr.jpg', 'Vagabond is a Japanese manga series written and illustrated by Takehiko Inoue. It portrays a fictionalized account of the life of Japanese swordsman Musashi Miyamoto, based on Eiji Yoshikawa\'s novel Musashi. The story delves into Musashi\'s journey from a brash young man to a legendary swordsman, exploring themes of self-discovery, the pursuit of greatness, and the philosophical aspects of martial arts. It has been serialized in Weekly Morning magazine since 1998, with the chapters collected into 37 tankōbon volumes by Kodansha as of September 2020.', 'true', 'Vagabond is an absolute masterpiece that transcends the boundaries of traditional manga storytelling. Takehiko Inoue\'s art is breathtakingly detailed, capturing the raw emotion and intensity of Musashi Miyamoto\'s journey. The philosophical depth and exploration of self-discovery make this series a profound and thought-provoking read. It\'s a story that stays with you long after you\'ve turned the last page, leaving you contemplating the true meaning of greatness and the path to achieving it.', 10);
 
@@ -359,6 +357,9 @@ function displayBooks(currBook) {
     const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
     path.setAttribute("d", "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z");
     buttons.appendChild(path);
+    buttons.style.height = "30px"
+    buttons.style.marginTop = "5px"
+    buttons.style.justifySelf = "flex-end"
     buttons.addEventListener("click", editButtonClick)
     details.appendChild(buttons);
     
