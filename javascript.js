@@ -352,6 +352,8 @@ function displayBooks(currBook) {
 
     details.appendChild(title_author)
 
+    const dotsDiv = document.createElement("div")
+    dotsDiv.classList.add("dotsDiv")
     
     const buttons = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     buttons.classList.add("three-vertical-dots");
@@ -369,7 +371,37 @@ function displayBooks(currBook) {
     buttons.style.marginTop = "5px"
     buttons.style.justifySelf = "flex-end"
     buttons.addEventListener("click", editButtonClick)
-    details.appendChild(buttons);
+
+    editOL = document.createElement("ol")
+
+    const editCover = document.createElement("li")
+    editCover.textContent = "Change Book Cover"
+    editCover.style.cursor = "pointer"
+    // editCover.addEventListener("click", editCoverClick)
+    editOL.appendChild(editCover)
+
+    const editReview = document.createElement("li")
+    editReview.textContent = "Edit your Review"
+    editReview.style.cursor = "pointer"
+    // editReview.addEventListener("click", editReviewClick)
+    editOL.appendChild(editReview)
+
+    const editSynopsis = document.createElement("li")
+    editSynopsis.textContent = "Edit Synopsis"
+    editSynopsis.style.cursor = "pointer"
+    // editSynopsis.addEventListener("click", editSynopsisClick)
+    editOL.appendChild(editSynopsis)
+
+    const editRating = document.createElement("li")
+    editRating.textContent = "Change your Rating"
+    editRating.style.cursor = "pointer"
+    // editRating.addEventListener("click", editRatingClick)
+    editOL.appendChild(editRating)
+    editOL.classList.add("edit")
+
+    dotsDiv.appendChild(buttons)
+    dotsDiv.appendChild(editOL)
+    details.appendChild(dotsDiv);
     
     main.appendChild(book)
     addDarkClass()
@@ -721,12 +753,10 @@ confirmBtn.addEventListener("click", (event) => {
 
 function editButtonClick(event) {
   const bookWhoseEditButtonWasClicked = event.target.closest(".book");
-  const editButton = bookWhoseEditButtonWasClicked.querySelector(".three-vertical-dots");
-  editButton.style.postiton = "relative";
-  const editList = document.querySelector(".edit")
+  const editList = bookWhoseEditButtonWasClicked.querySelector(".edit")
   editList.style.position = "absolute";
-  editList.style.top = `${event.clientY}px`;
-  editList.style.left = `${event.clientX}px`;
+  editList.style.top = "10%";
+  editList.style.left = "-315%";
   if (editList.style.display == "block") {editList.style.display = "none"; console.log("none")}
   else if (editList.style.display == "none" || editList.style.display == "") {editList.style.display = "block"; console.log("block")}
   console.log(event.target.closest(".book").querySelector(".book-details > div > p:nth-child(1)").textContent)
@@ -1283,7 +1313,7 @@ function changeTheme(event) {
   document.querySelectorAll('.book-details').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelectorAll('svg').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelectorAll('svg.icon').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('list').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('.list').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelectorAll('dialog').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelectorAll('input').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelectorAll('textarea').forEach(element => {element.classList.toggle('dark-theme')});
