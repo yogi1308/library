@@ -202,5 +202,32 @@
             </button>
             <button id="edit-synopsis-confirm" value="default">Confirm</button>
         </dialog>
+        <dialog class="change-rating">
+            <p>Change Your Rating</p>
+            <div class="ratings-container">
+                <select name="status" required aria-placeholder="/10" id="editRating">
+                    <option value="default" selected disabled hidden>-</option>
+                    <option value="0">0</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+                <p>/10</p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="star"><title>star</title><path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.45,13.97L5.82,21L12,17.27Z" /></svg>
+            </div>
+            <button class="closeButton" value="cancel" formmethod="dialog" id="closeChangeRating">
+                <span class="X"></span>
+                <span class="Y"></span>
+                <div class="close">Close</div>
+            </button>
+            <button id="change-rating-confirm" value="default">Confirm</button>
+        </dialog>
 </body>
 </html>

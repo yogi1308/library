@@ -273,6 +273,12 @@
     scrollbar-width: none;
   }
 
+  .ratings-container {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+  }
+
   /* From Uiverse.io by javierBarroso */ 
 .closeButton {
   width: 1.75em;

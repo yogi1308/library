@@ -793,10 +793,9 @@ function changeCover(event) {
   coverURL = document.querySelector("#coverURL")
   coverURL.addEventListener("input", () => {coverPreview.style.backgroundImage = `url(${coverURL.value})`})
   closeChangeCover = document.querySelector("#closeChangeCover")
-  closeChangeCover.addEventListener("click", () => {changeCover.close();changeCover.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
+  closeChangeCover.addEventListener("click", () => {changeCover.close();changeCover.style.display = "none"; main.innerHTML = "";myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
   confirmChangeCover = document.querySelector("#book-cover-change")
-  confirmChangeCover.addEventListener("click", () =>{book.cover = coverURL.value;coverPreview.style.backgroundImage = ""; coverURL.value = ""; changeCover.close();changeCover.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
-  
+  confirmChangeCover.addEventListener("click", () =>{if (coverURL.value == "") {coverURL.value = book.cover} book.cover = coverURL.value;coverPreview.style.backgroundImage = ""; coverURL.value = "";changeCover.close();changeCover.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
 }
 
 function editReview(event) {
@@ -816,9 +815,9 @@ function editReview(event) {
   review = document.querySelector("#editReview")
   review.value = book.review
   closeChangeReview = document.querySelector("#closeEditReview")
-  closeChangeReview.addEventListener("click", () => {changeReview.close();changeReview.style.display = "none";})
+  closeChangeReview.addEventListener("click", () => {changeReview.close();changeReview.style.display = "none";main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
   confirmChangeReview = document.querySelector("#edit-review-confirm")
-  confirmChangeReview.addEventListener("click", () =>{book.review = review.value; review.value = ""; changeReview.close();changeReview.style.display = "none";})
+  confirmChangeReview.addEventListener("click", () =>{if (review.value == "") {review.value = book.review} book.review = review.value; review.value = ""; changeReview.close();changeReview.style.display = "none";main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
 }
 
 function editSynopsis(event) {
@@ -838,14 +837,84 @@ function editSynopsis(event) {
   synopsis = document.querySelector("#editSynopsis")
   synopsis.value = book.synopsis
   closeChangeSynopsis = document.querySelector("#closeEditSynopsis")
-  closeChangeSynopsis.addEventListener("click", () => {changeSynopsis.close();changeSynopsis.style.display = "none";})
+  closeChangeSynopsis.addEventListener("click", () => {changeSynopsis.close();changeSynopsis.style.display = "none";main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
   confirmChangeSynopsis = document.querySelector("#edit-synopsis-confirm")
-  confirmChangeSynopsis.addEventListener("click", () =>{book.synopsis = synopsis.value; synopsis.value = ""; changeSynopsis.close();changeSynopsis.style.display = "none";})
+  confirmChangeSynopsis.addEventListener("click", () =>{if (synopsis.value == "") {synopsis.value = book.synopsis}book.synopsis = synopsis.value; synopsis.value = ""; changeSynopsis.close();changeSynopsis.style.display = "none";main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
 }
 
+// Set up the dialog and listeners only once
+const changeRatingDialog = document.querySelector(".change-rating");
+const closeChangeRating = document.querySelector("#closeChangeRating");
+const confirmChangeRating = document.querySelector("#change-rating-confirm");
+const ratingInput = document.querySelector("#editRating");
+const star = document.querySelector("#star");
+
+// Add event listeners only once during the initial setup
+closeChangeRating.addEventListener("click", () => {
+  changeRatingDialog.close();
+  changeRatingDialog.style.display = "none";
+  main.innerHTML = "";
+  myLibrary.forEach((book) => {
+    if (viewType == "regular") {
+      displayBooks(book);
+    } else if (viewType == "compact") {
+      displayCompactBooks(book);
+    } else if (viewType == "list") {
+      listView(book);
+    }
+    addDarkClass();
+  });
+});
+
+confirmChangeRating.addEventListener("click", () => {
+  const bookTitle = changeRatingDialog.dataset.bookTitle;
+  const book = myLibrary.find((b) => b.title === bookTitle);
+
+  if (!ratingInput.value) {
+    ratingInput.value = book.rating;
+  }
+  book.rating = ratingInput.value;
+  ratingInput.value = "";
+  changeRatingDialog.close();
+  changeRatingDialog.style.display = "none";
+  main.innerHTML = "";
+  myLibrary.forEach((book) => {
+    if (viewType == "regular") {
+      displayBooks(book);
+    } else if (viewType == "compact") {
+      displayCompactBooks(book);
+    } else if (viewType == "list") {
+      listView(book);
+    }
+    addDarkClass();
+  });
+});
+
+// Main function to open and configure the dialog
 function changeRating(event) {
+  const bookElement = event.target.closest(".book");
+  const bookTitle = bookElement.querySelector(".book-details > div > p:nth-child(1)").textContent;
+  const book = myLibrary.find((b) => b.title === bookTitle);
 
+  // Pass the book's title to the dialog using a data attribute
+  changeRatingDialog.dataset.bookTitle = bookTitle;
+
+  changeRatingDialog.showModal();
+  changeRatingDialog.style.position = "fixed";
+  changeRatingDialog.style.top = "5%";
+  changeRatingDialog.style.left = "25%";
+  changeRatingDialog.style.fontSize = "16px";
+  changeRatingDialog.style.width = "50vw";
+  changeRatingDialog.style.display = "flex";
+  changeRatingDialog.style.flexDirection = "column";
+  changeRatingDialog.style.gap = "10px";
+
+  ratingInput.value = book.rating;
+  star.style.fill = "gold";
+  star.style.width = "20px";
+  star.style.height = "20px";
 }
+
 
 function bookCoverHover(event) {
   const cover = event.target.closest(".book-cover");
