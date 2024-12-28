@@ -522,20 +522,59 @@ function displayCompactBooks(currBook) {
   details.appendChild(title_author)
 
   
+  const dotsDiv = document.createElement("div")
+  dotsDiv.classList.add("dotsDiv")
+  
   const buttons = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  buttons.classList.add("three-vertical-dots");
+  buttons.style.cursor = "pointer";
   buttons.setAttribute("xmlns", "http://www.w3.org/2000/svg");
   buttons.setAttribute("viewBox", "0 0 24 24");
   const titleElement = document.createElementNS("http://www.w3.org/2000/svg", "title");
   titleElement.textContent = "dots-vertical";
-  buttons.classList.add("three-vertical-dots");
-  buttons.style.cursor = "pointer";
   buttons.appendChild(titleElement);
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttribute("d", "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z");
   buttons.appendChild(path);
+  buttons.style.height = "30px"
+  buttons.style.marginTop = "5px"
+  buttons.style.justifySelf = "flex-end"
   buttons.addEventListener("click", editButtonClick)
-  details.appendChild(buttons);
+
+  editOL = document.createElement("ol")
+
+  const editCover = document.createElement("li")
+  editCover.textContent = "Change Book Cover"
+  editCover.style.cursor = "pointer"
+  // editCover.addEventListener("click", editCoverClick)
+  editOL.appendChild(editCover)
+
+  const editReview = document.createElement("li")
+  editReview.textContent = "Edit your Review"
+  editReview.style.cursor = "pointer"
+  // editReview.addEventListener("click", editReviewClick)
+  editOL.appendChild(editReview)
+
+  const editSynopsis = document.createElement("li")
+  editSynopsis.textContent = "Edit Synopsis"
+  editSynopsis.style.cursor = "pointer"
+  // editSynopsis.addEventListener("click", editSynopsisClick)
+  editOL.appendChild(editSynopsis)
+
+  const editRating = document.createElement("li")
+  editRating.textContent = "Change your Rating"
+  editRating.style.cursor = "pointer"
+  // editRating.addEventListener("click", editRatingClick)
+  editOL.appendChild(editRating)
+  editOL.classList.add("edit")
+
+  editOL.style.fontSize = "12px"
+
+  dotsDiv.appendChild(buttons)
+  dotsDiv.appendChild(editOL)
+  details.appendChild(dotsDiv);
+  
   
   main.appendChild(book)
   addDarkClass()
@@ -758,6 +797,7 @@ function editButtonClick(event) {
   editList.style.position = "absolute";
   editList.style.top = "25%";
   editList.style.left = "-300%";
+  if(viewType == "compact") {editList.style.left = "-800%"}
   if (editList.style.display == "block") {editList.style.display = "none"; console.log("none")}
   else if (editList.style.display == "none" || editList.style.display == "") {editList.style.display = "block"; console.log("block")}
   editList.addEventListener("click", (event) => {
