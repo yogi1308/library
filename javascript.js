@@ -766,6 +766,8 @@ function editButtonClick(event) {
     else if (event.target.textContent == "Edit Synopsis") {editSynopsis(event)}
     else if (event.target.textContent == "Change your Rating") {changeRating(event)}
   })
+  editList.addEventListener("mouseenter", (event) => {editList.style.display = "block"})
+  editList.addEventListener("mouseleave", (event) => {editList.style.display = "none"})
 }
 
 function changeCover(event) {
@@ -794,10 +796,29 @@ function changeCover(event) {
   closeChangeCover.addEventListener("click", () => {changeCover.close();changeCover.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
   confirmChangeCover = document.querySelector("#book-cover-change")
   confirmChangeCover.addEventListener("click", () =>{book.cover = coverURL.value;coverPreview.style.backgroundImage = ""; coverURL.value = ""; changeCover.close();changeCover.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
+  
 }
 
 function editReview(event) {
-
+  book = event.target.closest(".book")
+  bookTitle = book.querySelector(".book-details > div > p:nth-child(1)").textContent
+  book = myLibrary.find(book => book.title === bookTitle)
+  changeReview = document.querySelector(".edit-review")
+  changeReview.showModal();
+  changeReview.style.position = "fixed";
+  changeReview.style.top = "5%";
+  changeReview.style.left = "25%";
+  changeReview.style.fontSize = "16px";
+  changeReview.style.width = "50vw";
+  changeReview.style.display = "flex";
+  changeReview.style.flexDirection = "column";
+  changeReview.style.gap = "10px";
+  review = document.querySelector("#editReview")
+  review.value = book.review
+  closeChangeReview = document.querySelector("#closeEditReview")
+  closeChangeReview.addEventListener("click", () => {changeReview.close();changeReview.style.display = "none";})
+  confirmChangeReview = document.querySelector("#edit-review-confirm")
+  confirmChangeReview.addEventListener("click", () =>{book.review = review.value; review.value = ""; changeReview.close();changeReview.style.display = "none";})
 }
 
 function editSynopsis(event) {
