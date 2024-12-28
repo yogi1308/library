@@ -451,6 +451,9 @@ body > dialog > form > label #Layer_1 {
   fill: #E3474F;
 }
 
+body > div.container > div.header > div:nth-child(3) {
+  width: 110px;
+}
 
 
 
