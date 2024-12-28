@@ -753,13 +753,59 @@ confirmBtn.addEventListener("click", (event) => {
 
 function editButtonClick(event) {
   const bookWhoseEditButtonWasClicked = event.target.closest(".book");
-  const editList = bookWhoseEditButtonWasClicked.querySelector(".edit")
+  const editList = bookWhoseEditButtonWasClicked.querySelector(".edit");
+  editList.style.width = "mincontent";
   editList.style.position = "absolute";
-  editList.style.top = "10%";
-  editList.style.left = "-315%";
+  editList.style.top = "25%";
+  editList.style.left = "-300%";
   if (editList.style.display == "block") {editList.style.display = "none"; console.log("none")}
   else if (editList.style.display == "none" || editList.style.display == "") {editList.style.display = "block"; console.log("block")}
-  console.log(event.target.closest(".book").querySelector(".book-details > div > p:nth-child(1)").textContent)
+  editList.addEventListener("click", (event) => {
+    if (event.target.textContent == "Change Book Cover") {changeCover(event)}
+    else if (event.target.textContent == "Edit your Review") {editReview(event)}
+    else if (event.target.textContent == "Edit Synopsis") {editSynopsis(event)}
+    else if (event.target.textContent == "Change your Rating") {changeRating(event)}
+  })
+}
+
+function changeCover(event) {
+  book = event.target.closest(".book")
+  bookTitle = book.querySelector(".book-details > div > p:nth-child(1)").textContent
+  book = myLibrary.find(book => book.title === bookTitle)
+  const changeCover = document.querySelector(".change-book-cover")
+  changeCover.showModal();
+  changeCover.style.position = "fixed";
+  changeCover.style.top = "5%";
+  changeCover.style.left = "25%";
+  changeCover.style.fontSize = "16px";
+  changeCover.style.width = "50vw";
+  changeCover.style.display = "flex";
+  changeCover.style.flexDirection = "column";
+  changeCover.style.gap = "10px";
+  coverPreview = document.querySelector(".cover-preview")
+  coverPreview.style.height = "100%";
+  coverPreview.style.aspectRatio = "2/3";
+  coverPreview.style.border = "2px solid black";
+  coverPreview.style.backgroundSize = "cover";
+  coverPreview.style.backgroundPosition = "center";
+  coverURL = document.querySelector("#coverURL")
+  coverURL.addEventListener("input", () => {coverPreview.style.backgroundImage = `url(${coverURL.value})`})
+  closeChangeCover = document.querySelector("#closeChangeCover")
+  closeChangeCover.addEventListener("click", () => {changeCover.close();changeCover.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
+  confirmChangeCover = document.querySelector("#book-cover-change")
+  confirmChangeCover.addEventListener("click", () =>{book.cover = coverURL.value;coverPreview.style.backgroundImage = ""; coverURL.value = ""; changeCover.close();changeCover.style.display = "none"; main.innerHTML = ""; myLibrary.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}; addDarkClass()})})
+}
+
+function editReview(event) {
+
+}
+
+function editSynopsis(event) {
+
+}
+
+function changeRating(event) {
+
 }
 
 function bookCoverHover(event) {
@@ -1304,7 +1350,7 @@ function addDarkClass() {
     document.querySelectorAll('textarea').forEach(element => {element.classList.add('dark-theme')});
     document.querySelectorAll('select').forEach(element => {element.classList.add('dark-theme')});
     document.querySelector('#confirmBtn').classList.add('dark-theme');
-    document.querySelector('.edit').classList.add('dark-theme');
+    document.querySelectorAll('.edit').forEach(element => {element.classList.add('dark-theme')});
   }
 }
 
@@ -1319,7 +1365,7 @@ function changeTheme(event) {
   document.querySelectorAll('textarea').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelectorAll('select').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelector('#confirmBtn').classList.toggle('dark-theme');
-  document.querySelector('.edit').classList.toggle('dark-theme');
+  document.querySelectorAll('.edit').forEach(element => {element.classList.toggle('dark-theme')});
   console.log("Theme changed");
 }
 
