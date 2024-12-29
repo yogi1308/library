@@ -50,8 +50,6 @@ function Book(title, author, status, length, lengthType, cover, synopsis, favori
   this.rating = rating
 }
 
-console.log(myLibrary)
-
 const theme = document.querySelector(".material-symbols-outlined")
 theme.addEventListener("click", changeTheme)
 theme.style.cursor = "pointer"
@@ -116,8 +114,7 @@ function sortBooks(event) {
     if (event.target.textContent === "By Title") {
       const titleSortArray = [...myLibrary].sort((a, b) => a.title.localeCompare(b.title));
       main.innerHTML = "";
-      titleSortArray.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book); console.log("list view");}})
-      console.log(myLibrary)
+      titleSortArray.forEach(book => {if (viewType == "regular") {displayBooks(book)} else if (viewType == "compact") {displayCompactBooks(book)} else if (viewType == "list") {listView(book)}})
     }
     else if (event.target.textContent === "By Author Name") {
       AuthorSortArray = [...myLibrary].sort((a, b) => a.author.localeCompare(b.author));
@@ -811,8 +808,8 @@ function editButtonClick(event) {
   editList.style.top = "25%";
   editList.style.left = "-300%";
   if(viewType == "compact" || viewType == "list") {editList.style.left = "-800%"}
-  if (editList.style.display == "block") {editList.style.display = "none"; console.log("none")}
-  else if (editList.style.display == "none" || editList.style.display == "") {editList.style.display = "block"; console.log("block")}
+  if (editList.style.display == "block") {editList.style.display = "none"}
+  else if (editList.style.display == "none" || editList.style.display == "") {editList.style.display = "block"}
   editList.addEventListener("click", (event) => {
     if (event.target.textContent == "Change Book Cover") {changeCover(event)}
     else if (event.target.textContent == "Edit your Review") {editReview(event)}
@@ -1245,7 +1242,6 @@ function likeClicked(event) {
     book.favorite = ""
     likeButton.style.fill = "#666"
   }
-  console.log(book)
 }
 
 function bookCoverClick(event) {
@@ -1341,7 +1337,6 @@ function bookCoverClick(event) {
   }
 
   bookInfoDialogDetails.appendChild(bookInfoFavoriteContainer);
-  console.log(book.favorite);
 
   
   const dialogSynopsisAndReviewContainer = document.querySelector(".synopsis-and-review")
@@ -1393,7 +1388,6 @@ function dialogLikeClicked(event) {
     likeButton.style.fill = "#666";
   }
 
-  console.log(book);
 }
 // function bookCoverClick(event) {
 //   bookInfoDialog = document.querySelector(".bookInfo")
@@ -1500,6 +1494,22 @@ function dialogLikeClicked(event) {
 
 // }
 
+function changeTheme(event) {
+  document.body.classList.toggle('dark-theme');
+  document.querySelectorAll('.book-details').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('svg').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('svg.icon').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('.list').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('dialog').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('input').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('textarea').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelectorAll('select').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelector('#confirmBtn').classList.toggle('dark-theme');
+  document.querySelectorAll('.edit').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelector('.header > div:nth-child(3) > ol:nth-child(5) > div > ol').classList.toggle('dark-theme');
+
+}
+
 function addDarkClass() {
   if (document.querySelector('body').classList.contains("dark-theme")) {
     document.querySelectorAll('.book-details').forEach(element => {element.classList.add('dark-theme')});
@@ -1516,21 +1526,35 @@ function addDarkClass() {
   }
 }
 
-function changeTheme(event) {
-  document.body.classList.toggle('dark-theme');
-  document.querySelectorAll('.book-details').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('svg').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('svg.icon').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('.list').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('dialog').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('input').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('textarea').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelectorAll('select').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelector('#confirmBtn').classList.toggle('dark-theme');
-  document.querySelectorAll('.edit').forEach(element => {element.classList.toggle('dark-theme')});
-  document.querySelector('.header > div:nth-child(3) > ol:nth-child(5) > div > ol').classList.toggle('dark-theme');
-  console.log("Theme changed");
+function applyThemeBasedOnSystemPreference() {
+  const isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  if (isDarkMode) {
+    document.querySelector('body').classList.add('dark-theme');
+    document.querySelector('.display-list.list').classList.add('dark-theme');
+    document.querySelector('ol.list').classList.add('dark-theme');
+    document.querySelectorAll('.book-details').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('svg').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('svg.icon').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('list').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('dialog').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('input').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('textarea').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelectorAll('select').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelector('#confirmBtn').classList.add('dark-theme');
+    document.querySelectorAll('.edit').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelector('.header > div:nth-child(3) > ol:nth-child(5) > div > ol').classList.add('dark-theme');
+  } else {
+    return
+  }
 }
+
+// Apply theme on page load
+applyThemeBasedOnSystemPreference();
+
+// Listen for changes in system preference
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyThemeBasedOnSystemPreference);
+
 
  
 

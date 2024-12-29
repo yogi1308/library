@@ -578,12 +578,16 @@ body > div.container > div.header > div:nth-child(3) {
     transform: rotate(180deg);
   }
 
-  .header, .main, body, dialog {
+  body, dialog {
     background: lightyellow;
   }
 
   .book-details, input, textarea, select, .confirm, .edit {
     background: rgb(250, 247, 228);
+  }
+
+  .book-details:hover {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
   }
 
 
