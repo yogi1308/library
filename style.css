@@ -638,7 +638,7 @@ body > div.container > div.header > div:nth-child(3) {
     fill: black;
   }
 
-  .list.dark-theme {
+  .list.dark-theme, .header > div:nth-child(3) > ol:nth-child(5) > div > ol {
     background:rgba(0, 0, 0, 0.5)
   }
 

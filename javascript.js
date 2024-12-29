@@ -200,32 +200,7 @@ function displayType(event) {
       main.innerHTML = ""
       main.style = ""
       main.style.display = "block" // Change to block for list view
-      myLibrary.forEach(book => {displayBooks(book)})
-      const books = document.querySelectorAll(".book")
-      books.forEach(book => {
-          book.style.display = "flex"; // Use flexbox for layout
-          book.style.alignItems = "center"; // Center items vertically
-          book.style.width = "100%"; // Full width
-          book.style.height = "100px"
-          book.style.marginBottom = "10px"; // Add some space between books
-
-          const cover = book.querySelector(".book-cover");
-          cover.style.height = "100px"; // Maintain aspect ratio
-          cover.style.aspectRatio = "2/3"
-          cover.style.marginRight = "10px"; // Space between cover and details
-
-          const bookDots = book.querySelector(".book-details>svg")
-          bookDots.style.maxHeight = "20px"
-          bookDots.style.justifySelf = "flex-end"
-
-          const details = book.querySelector(".book-details");
-          details.style.flex = "1"; // Occupy remaining space
-          details.style.borderRadius = "5px"
-
-          const delBtn = book.querySelector(".deleteButton")
-          delBtn.style.position = "reltaive"
-          delBtn.style.left = "70%"
-      })
+      myLibrary.forEach(book => {listView(book)})
     }
   })
 
@@ -705,31 +680,69 @@ function listView(currBook) {
 
   details.appendChild(title_author)
 
+  
+  const dotsDiv = document.createElement("div")
+  dotsDiv.classList.add("dotsDiv")
+  
   const buttons = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  buttons.classList.add("three-vertical-dots");
+  buttons.style.cursor = "pointer";
   buttons.setAttribute("xmlns", "http://www.w3.org/2000/svg");
   buttons.setAttribute("viewBox", "0 0 24 24");
   const titleElement = document.createElementNS("http://www.w3.org/2000/svg", "title");
   titleElement.textContent = "dots-vertical";
-  buttons.classList.add("three-vertical-dots");
-    buttons.style.cursor = "pointer";
   buttons.appendChild(titleElement);
 
   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
   path.setAttribute("d", "M12,16A2,2 0 0,1 14,18A2,2 0 0,1 12,20A2,2 0 0,1 10,18A2,2 0 0,1 12,16M12,10A2,2 0 0,1 14,12A2,2 0 0,1 12,14A2,2 0 0,1 10,12A2,2 0 0,1 12,10M12,4A2,2 0 0,1 14,6A2,2 0 0,1 12,8A2,2 0 0,1 10,6A2,2 0 0,1 12,4Z");
   buttons.appendChild(path);
+  buttons.style.height = "30px"
+  buttons.style.marginTop = "5px"
+  buttons.style.justifySelf = "flex-end"
+  buttons.addEventListener("click", editButtonClick)
+
+  editOL = document.createElement("ol")
+
+  const editCover = document.createElement("li")
+  editCover.textContent = "Change Book Cover"
+  editCover.style.cursor = "pointer"
+  // editCover.addEventListener("click", editCoverClick)
+  editOL.appendChild(editCover)
+
+  const editReview = document.createElement("li")
+  editReview.textContent = "Edit your Review"
+  editReview.style.cursor = "pointer"
+  // editReview.addEventListener("click", editReviewClick)
+  editOL.appendChild(editReview)
+
+  const editSynopsis = document.createElement("li")
+  editSynopsis.textContent = "Edit Synopsis"
+  editSynopsis.style.cursor = "pointer"
+  // editSynopsis.addEventListener("click", editSynopsisClick)
+  editOL.appendChild(editSynopsis)
+
+  const editRating = document.createElement("li")
+  editRating.textContent = "Change your Rating"
+  editRating.style.cursor = "pointer"
+  // editRating.addEventListener("click", editRatingClick)
+  editOL.appendChild(editRating)
+  editOL.classList.add("edit")
+
   buttons.style.cursor = "pointer"
   buttons.style.height = "20px"
   buttons.style.marginTop = "5px"
   buttons.style.alignSelf = "flex-start"
   buttons.addEventListener("click", editButtonClick)
-  details.appendChild(buttons);
+  
+  dotsDiv.appendChild(buttons)
+  dotsDiv.appendChild(editOL)
+  details.appendChild(dotsDiv);
 
   book.appendChild(details)
   book.style.height = "100px"
   book.style.marginBottom = "10px"; // Add some space between books
   newmain.appendChild(book)
   addDarkClass()
-
 }
 
 
@@ -797,7 +810,7 @@ function editButtonClick(event) {
   editList.style.position = "absolute";
   editList.style.top = "25%";
   editList.style.left = "-300%";
-  if(viewType == "compact") {editList.style.left = "-800%"}
+  if(viewType == "compact" || viewType == "list") {editList.style.left = "-800%"}
   if (editList.style.display == "block") {editList.style.display = "none"; console.log("none")}
   else if (editList.style.display == "none" || editList.style.display == "") {editList.style.display = "block"; console.log("block")}
   editList.addEventListener("click", (event) => {
@@ -1499,6 +1512,7 @@ function addDarkClass() {
     document.querySelectorAll('select').forEach(element => {element.classList.add('dark-theme')});
     document.querySelector('#confirmBtn').classList.add('dark-theme');
     document.querySelectorAll('.edit').forEach(element => {element.classList.add('dark-theme')});
+    document.querySelector('.header > div:nth-child(3) > ol:nth-child(5) > div > ol').classList.add('dark-theme');
   }
 }
 
@@ -1514,6 +1528,7 @@ function changeTheme(event) {
   document.querySelectorAll('select').forEach(element => {element.classList.toggle('dark-theme')});
   document.querySelector('#confirmBtn').classList.toggle('dark-theme');
   document.querySelectorAll('.edit').forEach(element => {element.classList.toggle('dark-theme')});
+  document.querySelector('.header > div:nth-child(3) > ol:nth-child(5) > div > ol').classList.toggle('dark-theme');
   console.log("Theme changed");
 }
 
