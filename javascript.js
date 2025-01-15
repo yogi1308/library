@@ -1,3 +1,17 @@
+class Book {
+  constructor (title, author, status, length, lengthType, cover, synopsis, favorite, review, rating) {
+    this.title = title
+    this.author = author 
+    this.status = status
+    this.length = length
+    this.lengthType = lengthType
+    this.cover = cover
+    this.synopsis = synopsis
+    this.favorite = favorite
+    this.review = review
+    this.rating = rating
+  }
+}
 
 Vagabond = new Book('Vagabond', 'Takehiko Inoue', 'Completed', 327, 'Chapters', 'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781421577449/vagabond-vol-37-9781421577449_hr.jpg', 'Vagabond is a Japanese manga series written and illustrated by Takehiko Inoue. It portrays a fictionalized account of the life of Japanese swordsman Musashi Miyamoto, based on Eiji Yoshikawa\'s novel Musashi. The story delves into Musashi\'s journey from a brash young man to a legendary swordsman, exploring themes of self-discovery, the pursuit of greatness, and the philosophical aspects of martial arts. It has been serialized in Weekly Morning magazine since 1998, with the chapters collected into 37 tankōbon volumes by Kodansha as of September 2020.', 'true', 'Vagabond is an absolute masterpiece that transcends the boundaries of traditional manga storytelling. Takehiko Inoue\'s art is breathtakingly detailed, capturing the raw emotion and intensity of Musashi Miyamoto\'s journey. The philosophical depth and exploration of self-discovery make this series a profound and thought-provoking read. It\'s a story that stays with you long after you\'ve turned the last page, leaving you contemplating the true meaning of greatness and the path to achieving it.', 10);
 TheSlamDunk = new Book('The Slam Dunk', 'Takehiko Inoue', 'Started', 276, 'Chapters', 'https://d28hgpri8am2if.cloudfront.net/book_images/cvr9781421533285_9781421533285_hr.jpg', 'Slam Dunk is a Japanese manga series written and illustrated by Takehiko Inoue about a basketball team from Shōhoku High School in the Shōnan area. The story follows Hanamichi Sakuragi, a delinquent and basketball novice, as he joins the school\'s basketball team to impress a girl he likes. Through hard work, determination, and the guidance of his teammates and coach, Hanamichi grows as a player and person, learning valuable life lessons along the way. It was serialized in Shueisha\'s Weekly Shōnen Jump from October 1990 to June 1996, with the chapters collected into 31 tankōbon volumes.', 'true', 'Slam Dunk is an exhilarating journey that captures the essence of youth, ambition, and the transformative power of sports. Takehiko Inoue masterfully portrays the growth of Hanamichi Sakuragi from a brash delinquent to a dedicated basketball player. The series is filled with intense matches, heartfelt moments, and a cast of characters that you can\'t help but root for. It\'s a motivational and uplifting story that reminds us of the importance of perseverance and teamwork.', 9);
@@ -45,20 +59,6 @@ ClockworkOrange = new Book('A Clockwork Orange', 'Anthony Burgess', 'Unread', 21
 
 myLibrary = [Vagabond, TheSlamDunk, Berserk, OnePiece, SteelBallRun, ChainsawMan, VinLandSaga, TheAlchemist, TheHobbit, TheGreatGatsby, TheHungerGames, TheLordOfTheRings, TheSilmarillion, TheTwoTowers, TheFellowshipOfTheRing, TheReturnOfTheKing, Ikigai, BookOfBasketball, MichaelJordanTheLife, KaijuNo8, Dandadan, BluePeriod, AssassinationClassroom, HarryPotterPhilosophersStone, SakamotoDays, TheInvisibleMan, ToKillAMockingbird, LifeOfPi, ClockworkOrange, CantHurtMe, NoLongerHuman, TwentiethCenturyBoys, Haikyu, OyasumiPunpun, GreatTeacherOnizuka, Naruto, TokyoGhoul, TokyoGhoulRe, HellsParadise, Dorohedoro];
 
-class Book {
-  constructor (book) {
-    this.title = title
-    this.author = author 
-    this.status = status
-    this.length = length
-    this.lengthType = lengthType
-    this.cover = cover
-    this.synopsis = synopsis
-    this.favorite = favorite
-    this.review = review
-    this.rating = rating
-  }
-}
 
 // function Book(title, author, status, length, lengthType, cover, synopsis, favorite, review, rating) {
 //   // the constructor...
