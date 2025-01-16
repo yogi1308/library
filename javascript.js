@@ -59,21 +59,6 @@ ClockworkOrange = new Book('A Clockwork Orange', 'Anthony Burgess', 'Unread', 21
 
 myLibrary = [Vagabond, TheSlamDunk, Berserk, OnePiece, SteelBallRun, ChainsawMan, VinLandSaga, TheAlchemist, TheHobbit, TheGreatGatsby, TheHungerGames, TheLordOfTheRings, TheSilmarillion, TheTwoTowers, TheFellowshipOfTheRing, TheReturnOfTheKing, Ikigai, BookOfBasketball, MichaelJordanTheLife, KaijuNo8, Dandadan, BluePeriod, AssassinationClassroom, HarryPotterPhilosophersStone, SakamotoDays, TheInvisibleMan, ToKillAMockingbird, LifeOfPi, ClockworkOrange, CantHurtMe, NoLongerHuman, TwentiethCenturyBoys, Haikyu, OyasumiPunpun, GreatTeacherOnizuka, Naruto, TokyoGhoul, TokyoGhoulRe, HellsParadise, Dorohedoro];
 
-
-// function Book(title, author, status, length, lengthType, cover, synopsis, favorite, review, rating) {
-//   // the constructor...
-//   this.title = title
-//   this.author = author 
-//   this.status = status
-//   this.length = length
-//   this.lengthType = lengthType
-//   this.cover = cover
-//   this.synopsis = synopsis
-//   this.favorite = favorite
-//   this.review = review
-//   this.rating = rating
-// }
-
 const theme = document.querySelector(".material-symbols-outlined")
 theme.addEventListener("click", changeTheme)
 theme.style.cursor = "pointer"
