@@ -180,6 +180,10 @@
     background-color: #f1f3f4;
   }
 
+  #search-input {
+    color: black;
+  }
+
   body {
     background: linear-gradient(135deg, #f0f0f0, #eaeaea);
   }
