@@ -1,5 +1,3 @@
-// check if the length of the entered title and author's word doesn't exceed 15 and whole length does't exceed 60 
-// if confirm is clicked with the title, author, lenth, lenthtype empty then the it should be highlighted in red and the reason should be mentioned
 
 class Book {
   constructor (title, author, status, length, lengthType, cover, synopsis, favorite, review, rating) {
@@ -844,92 +842,71 @@ document.querySelectorAll('.length-type').forEach(radio => {radio.addEventListen
 
 function checkTitleVaildity() {
   const title = document.getElementById('title')
-  let isValid = true
   if (title.value == "") {
     title.setCustomValidity("Please enter a title.");
-    isValid = false
   }
   else if(title.value.length < 2) {
     title.setCustomValidity("Title must be at least 2 characters long.");
-    isValid = false
   }
   else if (title.value.split(/\s+/).some(word => word.length > 15)) {
     title.setCustomValidity("No individual word should be more than 15 characters long.");
-    isValid = false
   } 
   else if (title.length < 70) {
     title.setCustomValidity("Title must be less than 70 characters long.");
-    isValid = false
   }
   else {
     title.setCustomValidity("");
   }
   title.reportValidity();
-  return isValid
 }
 
 function checkAuthorVaildity() {
   const author = document.getElementById('author') 
-  let isValid = true
   if (author.value == "") {
     author.setCustomValidity("Please enter the author's name.");
-    isValid = false
   }
   else if(author.value.length < 2) {
     author.setCustomValidity("Author's name must be at least 2 characters long.");
-    isValid = false
   }
   else if (author.value.split(/\s+/).some(word => word.length > 15)) {
     author.setCustomValidity("No individual word from the name should be more than 15 characters long.");
-    isValid = false
   } 
   else if (author.length < 50) {
     author.setCustomValidity("Author's name must be less than 50 characters long.");
-    isValid = false
   }
   else {
     author.setCustomValidity("");
   }
   author.reportValidity();
-  return isValid
 }
 
 function checkLengthValidity() {
   const length = document.getElementById('length')
-  let isValid = true
   if (length.value === "") {
     length.setCustomValidity("Please enter the book's length");
-    isValid = false
   }
   else if(length.value > 1000000000000) {
     length.setCustomValidity("Length should be less than 1,000,000,000,000.");
-    isValid = false
   }
   else if(length.value.includes('e')) {
     length.setCustomValidity("Length should be in exponent");
-    isValid = false
   }
   else {
     length.setCustomValidity("");
-    isValid = false
   }
   length.reportValidity();
-  return isValid
 }
 
 function checkLengthTypeValidity() {
   const lengthTypes = document.querySelectorAll('.length-type');
   const isChecked = Array.from(lengthTypes).some(radio => radio.checked);
-  let isValid = true
   if (!isChecked) {
     lengthTypes[0].setCustomValidity("Please select one option.");
-    isValid = false
   } else {
     lengthTypes[0].setCustomValidity(""); // Clear validation
   }
 
   lengthTypes[0].reportValidity(); // Show or remove the validation message
-  return isValid
 }
 
 function editButtonClick(event) {
