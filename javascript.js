@@ -1,3 +1,6 @@
+// check if the length of the entered title and author's word doesn't exceed 15 and whole length does't exceed 60 
+// if confirm is clicked with the title, author, lenth, lenthtype empty then the it should be highlighted in red and the reason should be mentioned
+
 class Book {
   constructor (title, author, status, length, lengthType, cover, synopsis, favorite, review, rating) {
     this.title = title
@@ -779,8 +782,32 @@ coverDialog.addEventListener("input", () => {
   coverDialogValue.style.marginBottom = "5px";
 });
 
+
+
 confirmBtn.addEventListener("click", (event) => {
   event.preventDefault(); // We don't want to submit this fake form
+
+  // Get all input values
+  let title = document.getElementById("title");
+  let author = document.getElementById("author");
+  let length = document.getElementById("length");
+  let lengthType = document.querySelector('input[name="length"]:checked');
+  
+  // Run validation functions
+  checkTitleVaildity();
+  checkAuthorVaildity();
+  checkLengthValidity();
+  checkLengthTypeValidity();
+
+  // Check if any field is invalid
+  if (!title.checkValidity() || 
+      !author.checkValidity() || 
+      !length.checkValidity() || 
+      !lengthType) {  
+    return; // Stop execution if any validation fails
+  }
+
+
   let coverDialogValue = document.querySelector(".dialog>div");
   let titleDialog = document.querySelector("input#title").value;
   let authorDialog = document.querySelector("input#author").value;
@@ -788,6 +815,7 @@ confirmBtn.addEventListener("click", (event) => {
   let lengthTypeDialog = document.querySelector('input[name="length"]:checked').value;
   let readStatusDialog = document.querySelector("select").value;
   let synopsisDialog = document.querySelector("#synopsis").value
+
   if (synopsisDialog == "Write a summary...") {synopsisDialog = ""}
   let favoriteDialog = document.querySelector(".like input[type='checkbox']").checked.toString()
   let reviewDialog = document.querySelector("#review").value
@@ -808,6 +836,101 @@ confirmBtn.addEventListener("click", (event) => {
   coverDialogValue.style.aspectRatio = "0";
   coverDialogValue.style.marginBottom = "0";
 });
+
+document.getElementById('title').addEventListener('input', checkTitleVaildity)
+document.getElementById('author').addEventListener('input', checkAuthorVaildity)
+document.getElementById('length').addEventListener('input', checkLengthValidity)
+document.querySelectorAll('.length-type').forEach(radio => {radio.addEventListener('input', checkLengthTypeValidity);});
+
+function checkTitleVaildity() {
+  const title = document.getElementById('title')
+  let isValid = true
+  if (title.value == "") {
+    title.setCustomValidity("Please enter a title.");
+    isValid = false
+  }
+  else if(title.value.length < 2) {
+    title.setCustomValidity("Title must be at least 2 characters long.");
+    isValid = false
+  }
+  else if (title.value.split(/\s+/).some(word => word.length > 15)) {
+    title.setCustomValidity("No individual word should be more than 15 characters long.");
+    isValid = false
+  } 
+  else if (title.length < 70) {
+    title.setCustomValidity("Title must be less than 70 characters long.");
+    isValid = false
+  }
+  else {
+    title.setCustomValidity("");
+  }
+  title.reportValidity();
+  return isValid
+}
+
+function checkAuthorVaildity() {
+  const author = document.getElementById('author') 
+  let isValid = true
+  if (author.value == "") {
+    author.setCustomValidity("Please enter the author's name.");
+    isValid = false
+  }
+  else if(author.value.length < 2) {
+    author.setCustomValidity("Author's name must be at least 2 characters long.");
+    isValid = false
+  }
+  else if (author.value.split(/\s+/).some(word => word.length > 15)) {
+    author.setCustomValidity("No individual word from the name should be more than 15 characters long.");
+    isValid = false
+  } 
+  else if (author.length < 50) {
+    author.setCustomValidity("Author's name must be less than 50 characters long.");
+    isValid = false
+  }
+  else {
+    author.setCustomValidity("");
+  }
+  author.reportValidity();
+  return isValid
+}
+
+function checkLengthValidity() {
+  const length = document.getElementById('length')
+  let isValid = true
+  if (length.value === "") {
+    length.setCustomValidity("Please enter the book's length");
+    isValid = false
+  }
+  else if(length.value > 1000000000000) {
+    length.setCustomValidity("Length should be less than 1,000,000,000,000.");
+    isValid = false
+  }
+  else if(length.value.includes('e')) {
+    length.setCustomValidity("Length should be in exponent");
+    isValid = false
+  }
+  else {
+    length.setCustomValidity("");
+    isValid = false
+  }
+  length.reportValidity();
+  return isValid
+}
+
+function checkLengthTypeValidity() {
+  const lengthTypes = document.querySelectorAll('.length-type');
+  const isChecked = Array.from(lengthTypes).some(radio => radio.checked);
+  let isValid = true
+  if (!isChecked) {
+    lengthTypes[0].setCustomValidity("Please select one option.");
+    isValid = false
+  } else {
+    lengthTypes[0].setCustomValidity(""); // Clear validation
+  }
+
+  lengthTypes[0].reportValidity(); // Show or remove the validation message
+  return isValid
+}
 
 function editButtonClick(event) {
   const bookWhoseEditButtonWasClicked = event.target.closest(".book");
@@ -1398,110 +1521,6 @@ function dialogLikeClicked(event) {
   }
 
 }
-// function bookCoverClick(event) {
-//   bookInfoDialog = document.querySelector(".bookInfo")
-//   bookInfo = event.target.closest(".book")
-//   bookInfoTitle = bookInfo.querySelector(".book-details > div > p:nth-child(1)").textContent
-//   const book = myLibrary.find(book => book.title === bookInfoTitle);
-//   bookInfoDialog.style.fontSize = "12px"
-//   bookInfoDialog.style.display = "grid"
-//   bookInfoDialog.style.gridTemplateColumns = "1fr 2fr"
-//   bookInfoDialog.style.gridTemplateRows = "1fr 2fr"
-//   bookInfoDialog.style.gridGap = "10px"
-//   bookInfoDialogCover = document.createElement("div")
-//   bookInfoDialogCover.style.gridRow = "span 1"
-//   bookInfoDialogCover.style.gridColumn = "span 1"
-//   bookInfoDialogCover.style.backgroundImage = `url(${book.cover})`
-//   bookInfoDialogCover.style.height = "100%"
-//   bookInfoDialogCover.style.aspectRatio = "2/3"
-//   bookInfoDialogCover.style.backgroundSize = "cover"
-//   bookInfoDialog.appendChild(bookInfoDialogCover)
-
-//   bookInfoDialogDetails = document.createElement("div")
-//   bookInfoDialogDetails.style.gridRow = "span 1"
-//   bookInfoDialogDetails.style.gridColumn = "span 1"
-//   bookInfoDialogDetails.style.display = "flex"
-//   bookInfoDialogDetails.style.flexDirection = "column"
-//   bookInfoTitleDialog = document.createElement("p")
-//   bookInfoTitleDialog.textContent = book.title
-//   bookInfoTitleDialog.style.fontSize = "20px"
-//   bookInfoDialogDetails.appendChild(bookInfoTitleDialog)
-//   bookInfoAuthorDialog = document.createElement("p")
-//   bookInfoAuthorDialog.textContent = book.author
-//   bookInfoAuthorDialog.style.color = "gray"
-//   bookInfoAuthorDialog.style.fontSize = "16px"
-//   bookInfoDialogDetails.appendChild(bookInfoAuthorDialog)
-//   bookInfoLengthDialog = document.createElement("p")
-//   bookInfoLengthDialog.textContent = book.length + " " + book.lengthType
-//   bookInfoDialogDetails.appendChild(bookInfoLengthDialog)
-//   bookInfoStatusDialog = document.createElement("p")
-//   bookInfoStatusDialog.textContent = book.status
-//   bookInfoDialogDetails.appendChild(bookInfoStatusDialog)
-//   const bookInfoRatingContainer = document.createElement("div");
-//   bookInfoRatingContainer.style.display = "flex";
-//   bookInfoRatingContainer.style.alignItems = "center";
-  
-//   const bookInfoRatingDialog = document.createElement("p");
-//   bookInfoRatingDialog.textContent = book.rating + "/10";
-//   bookInfoRatingDialog.style.marginRight = "5px";
-  
-//   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-//   svg.setAttribute("height", "24px");
-//   svg.setAttribute("id", "Layer_1");
-//   svg.setAttribute("version", "1.2");
-//   svg.setAttribute("viewBox", "0 0 24 24");
-//   svg.setAttribute("width", "24px");
-//   svg.setAttribute("xml:space", "preserve");
-//   svg.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-//   svg.setAttribute("xmlns:xlink", "http://www.w3.org/1999/xlink");
-//   svg.style.fill = "gold";
-  
-//   const g1 = document.createElementNS("http://www.w3.org/2000/svg", "g");
-//   const g2 = document.createElementNS("http://www.w3.org/2000/svg", "g");
-//   const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
-//   path.setAttribute("d", "M9.362,9.158c0,0-3.16,0.35-5.268,0.584c-0.19,0.023-0.358,0.15-0.421,0.343s0,0.394,0.14,0.521    c1.566,1.429,3.919,3.569,3.919,3.569c-0.002,0-0.646,3.113-1.074,5.19c-0.036,0.188,0.032,0.387,0.196,0.506    c0.163,0.119,0.373,0.121,0.538,0.028c1.844-1.048,4.606-2.624,4.606-2.624s2.763,1.576,4.604,2.625    c0.168,0.092,0.378,0.09,0.541-0.029c0.164-0.119,0.232-0.318,0.195-0.505c-0.428-2.078-1.071-5.191-1.071-5.191    s2.353-2.14,3.919-3.566c0.14-0.131,0.202-0.332,0.14-0.524s-0.23-0.319-0.42-0.341c-2.108-0.236-5.269-0.586-5.269-0.586    s-1.31-2.898-2.183-4.83c-0.082-0.173-0.254-0.294-0.456-0.294s-0.375,0.122-0.453,0.294C10.671,6.26,9.362,9.158,9.362,9.158z");
-  
-//   g2.appendChild(path);
-//   g1.appendChild(g2);
-//   svg.appendChild(g1);
-  
-//   bookInfoRatingContainer.appendChild(bookInfoRatingDialog);
-//   bookInfoRatingContainer.appendChild(svg);
-//   bookInfoDialogDetails.appendChild(bookInfoRatingContainer);
-//   bookInfoDialog.appendChild(bookInfoDialogDetails)
-
-//   bookInfoDialogSynopsisAndReview = document.createElement("div")
-//   bookInfoDialogSynopsisAndReview.style.gridColumn = "span 2"
-//   bookInfoDialogSynopsisAndReview.style.gridRow = "span 1"
-//   bookInfoDialogSynopsisAndReview.style.display = "flex"
-//   bookInfoDialogSynopsisAndReview.style.flexDirection = "column"
-//   bookInfoSynopsisDialog = document.createElement("p")
-//   bookInfoSynopsisDialog.innerHTML = "<span style='color: gray; font-Size: 16px'>Synopsis</span><br>" + book.synopsis
-//   bookInfoDialogSynopsisAndReview.appendChild(bookInfoSynopsisDialog)
-//   bookInfoReviewDialog = document.createElement("p")
-//   bookInfoReviewDialog.innerHTML = "<span style='color: gray; font-Size: 16px'>Review</span><br>" + book.review
-//   bookInfoDialogSynopsisAndReview.appendChild(bookInfoReviewDialog)
-//   bookInfoDialog.style.width = "clamp(350px, 50vw, 600px)"
-//   bookInfoDialog.style.maxHeight = "90vh"
-//   bookInfoDialog.style.position = "fixed"
-//   bookInfoDialog.style.top = "50%"
-//   bookInfoDialog.style.left = "50%"
-//   bookInfoDialog.style.transform = "translate(-50%, -50%)"
-//   bookInfoDialog.style.overflow = "auto"; // Enables scrolling
-//   bookInfoDialog.style.scrollbarWidth = "none"; // Hides scrollbar in Firefox
-//   bookInfoDialog.style.msOverflowStyle = "none"; // Hides scrollbar in IE/Edge
-
-//   bookInfoDialog.appendChild(bookInfoDialogSynopsisAndReview)
-  
-//   bookInfoDialog.showModal();
-
-//   closeBookInfo = document.querySelector(".bookInfo > .closeButton")  
-//   closeBookInfo.addEventListener("click", () => {
-//     bookInfoDialog.close();
-//   })
-
-
-// }
 
 function changeTheme(event) {
   document.body.classList.toggle('dark-theme');
